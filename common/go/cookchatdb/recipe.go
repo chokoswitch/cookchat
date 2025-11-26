@@ -20,6 +20,8 @@ const (
 	RecipeSourceDelishKitchen RecipeSource = "delishkitchen"
 	// RecipeSourceUser is the source for user-submitted recipes.
 	RecipeSourceUser RecipeSource = "user"
+	// RecipeSourceExternalUnknown is the source for external recipes with unknown source.
+	RecipeSourceExternalUnknown RecipeSource = "external_unknown"
 	// RecipeSourceAI is the source for AI-generated recipes.
 	RecipeSourceAI RecipeSource = "ai"
 )
