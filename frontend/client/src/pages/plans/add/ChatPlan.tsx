@@ -51,7 +51,9 @@ const ChatBubble = forwardRef<HTMLDivElement, { message: ChatMessage }>(
           )}
         >
           <div>
-            {message.content || <ChatBubbleLoading />}
+            {(message.content?.payload?.value as string) || (
+              <ChatBubbleLoading />
+            )}
             {message.urls && (
               <>
                 <br />
@@ -120,7 +122,7 @@ export function ChatPlan() {
     if (getChatMessagesRes.messages.length === 0) {
       doChatPlan.mutate({
         chatId: getChatMessagesRes?.chatId,
-        message: t("Hello"),
+        message: { payload: { case: "message", value: t("Hello") } },
       });
     }
   }, [doChatPlan, getChatMessagesRes, loaded, t]);
@@ -130,7 +132,7 @@ export function ChatPlan() {
     setInputText("");
     doChatPlan.mutate({
       chatId: getChatMessagesRes?.chatId,
-      message: message,
+      message: { payload: { case: "message", value: message } },
     });
   }, [getChatMessagesRes, inputText, doChatPlan]);
 

@@ -98,7 +98,7 @@ func (h *Handler) ChatPlan(ctx context.Context, req *frontendapi.ChatPlanRequest
 	chat.UpdatedAt = now
 	chat.Messages = append(chat.Messages, cookchatdb.ChatMessage{
 		Role:    cookchatdb.ChatRoleUser,
-		Content: req.GetMessage(),
+		Content: req.GetMessage().GetMessage(),
 	})
 
 	content := make([]*genai.Content, len(chat.Messages))

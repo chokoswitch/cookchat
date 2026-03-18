@@ -347,7 +347,7 @@ func (x StartChatRequest_ModelProvider) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use StartChatRequest_ModelProvider.Descriptor instead.
 func (StartChatRequest_ModelProvider) EnumDescriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{13, 0}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{14, 0}
 }
 
 type ChatMessage_Role int32
@@ -396,7 +396,61 @@ func (x ChatMessage_Role) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use ChatMessage_Role.Descriptor instead.
 func (ChatMessage_Role) EnumDescriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{34, 0}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{35, 0}
+}
+
+type Image struct {
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// The raw image data.
+	Data []byte `protobuf:"bytes,1,opt,name=data,proto3" json:"data,omitempty"`
+	// The MIME type of the image, e.g. "image/png".
+	MimeType      string `protobuf:"bytes,2,opt,name=mime_type,json=mimeType,proto3" json:"mime_type,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Image) Reset() {
+	*x = Image{}
+	mi := &file_frontendapi_frontend_proto_msgTypes[0]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Image) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Image) ProtoMessage() {}
+
+func (x *Image) ProtoReflect() protoreflect.Message {
+	mi := &file_frontendapi_frontend_proto_msgTypes[0]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Image.ProtoReflect.Descriptor instead.
+func (*Image) Descriptor() ([]byte, []int) {
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{0}
+}
+
+func (x *Image) GetData() []byte {
+	if x != nil {
+		return x.Data
+	}
+	return nil
+}
+
+func (x *Image) GetMimeType() string {
+	if x != nil {
+		return x.MimeType
+	}
+	return ""
 }
 
 // The content of a chat message.
@@ -406,6 +460,7 @@ type ChatContent struct {
 	//
 	//	*ChatContent_Message
 	//	*ChatContent_Audio
+	//	*ChatContent_Image
 	Payload       isChatContent_Payload `protobuf_oneof:"payload"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -413,7 +468,7 @@ type ChatContent struct {
 
 func (x *ChatContent) Reset() {
 	*x = ChatContent{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[0]
+	mi := &file_frontendapi_frontend_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -425,7 +480,7 @@ func (x *ChatContent) String() string {
 func (*ChatContent) ProtoMessage() {}
 
 func (x *ChatContent) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[0]
+	mi := &file_frontendapi_frontend_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -438,7 +493,7 @@ func (x *ChatContent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChatContent.ProtoReflect.Descriptor instead.
 func (*ChatContent) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{0}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *ChatContent) GetPayload() isChatContent_Payload {
@@ -466,6 +521,15 @@ func (x *ChatContent) GetAudio() []byte {
 	return nil
 }
 
+func (x *ChatContent) GetImage() *Image {
+	if x != nil {
+		if x, ok := x.Payload.(*ChatContent_Image); ok {
+			return x.Image
+		}
+	}
+	return nil
+}
+
 type isChatContent_Payload interface {
 	isChatContent_Payload()
 }
@@ -480,9 +544,16 @@ type ChatContent_Audio struct {
 	Audio []byte `protobuf:"bytes,2,opt,name=audio,proto3,oneof"`
 }
 
+type ChatContent_Image struct {
+	// An image message.
+	Image *Image `protobuf:"bytes,3,opt,name=image,proto3,oneof"`
+}
+
 func (*ChatContent_Message) isChatContent_Payload() {}
 
 func (*ChatContent_Audio) isChatContent_Payload() {}
+
+func (*ChatContent_Image) isChatContent_Payload() {}
 
 // A request to send in a chat.
 type ChatRequest struct {
@@ -502,7 +573,7 @@ type ChatRequest struct {
 
 func (x *ChatRequest) Reset() {
 	*x = ChatRequest{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[1]
+	mi := &file_frontendapi_frontend_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -514,7 +585,7 @@ func (x *ChatRequest) String() string {
 func (*ChatRequest) ProtoMessage() {}
 
 func (x *ChatRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[1]
+	mi := &file_frontendapi_frontend_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -527,7 +598,7 @@ func (x *ChatRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChatRequest.ProtoReflect.Descriptor instead.
 func (*ChatRequest) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{1}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *ChatRequest) GetContent() *ChatContent {
@@ -591,7 +662,7 @@ type ChatResponse struct {
 
 func (x *ChatResponse) Reset() {
 	*x = ChatResponse{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[2]
+	mi := &file_frontendapi_frontend_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -603,7 +674,7 @@ func (x *ChatResponse) String() string {
 func (*ChatResponse) ProtoMessage() {}
 
 func (x *ChatResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[2]
+	mi := &file_frontendapi_frontend_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -616,7 +687,7 @@ func (x *ChatResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChatResponse.ProtoReflect.Descriptor instead.
 func (*ChatResponse) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{2}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *ChatResponse) GetContent() *ChatContent {
@@ -639,7 +710,7 @@ type RecipeIngredient struct {
 
 func (x *RecipeIngredient) Reset() {
 	*x = RecipeIngredient{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[3]
+	mi := &file_frontendapi_frontend_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -651,7 +722,7 @@ func (x *RecipeIngredient) String() string {
 func (*RecipeIngredient) ProtoMessage() {}
 
 func (x *RecipeIngredient) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[3]
+	mi := &file_frontendapi_frontend_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -664,7 +735,7 @@ func (x *RecipeIngredient) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecipeIngredient.ProtoReflect.Descriptor instead.
 func (*RecipeIngredient) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{3}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *RecipeIngredient) GetName() string {
@@ -694,7 +765,7 @@ type RecipeStep struct {
 
 func (x *RecipeStep) Reset() {
 	*x = RecipeStep{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[4]
+	mi := &file_frontendapi_frontend_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -706,7 +777,7 @@ func (x *RecipeStep) String() string {
 func (*RecipeStep) ProtoMessage() {}
 
 func (x *RecipeStep) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[4]
+	mi := &file_frontendapi_frontend_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -719,7 +790,7 @@ func (x *RecipeStep) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecipeStep.ProtoReflect.Descriptor instead.
 func (*RecipeStep) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{4}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *RecipeStep) GetDescription() string {
@@ -749,7 +820,7 @@ type IngredientSection struct {
 
 func (x *IngredientSection) Reset() {
 	*x = IngredientSection{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[5]
+	mi := &file_frontendapi_frontend_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -761,7 +832,7 @@ func (x *IngredientSection) String() string {
 func (*IngredientSection) ProtoMessage() {}
 
 func (x *IngredientSection) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[5]
+	mi := &file_frontendapi_frontend_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -774,7 +845,7 @@ func (x *IngredientSection) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use IngredientSection.ProtoReflect.Descriptor instead.
 func (*IngredientSection) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{5}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *IngredientSection) GetTitle() string {
@@ -824,7 +895,7 @@ type Recipe struct {
 
 func (x *Recipe) Reset() {
 	*x = Recipe{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[6]
+	mi := &file_frontendapi_frontend_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -836,7 +907,7 @@ func (x *Recipe) String() string {
 func (*Recipe) ProtoMessage() {}
 
 func (x *Recipe) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[6]
+	mi := &file_frontendapi_frontend_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -849,7 +920,7 @@ func (x *Recipe) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Recipe.ProtoReflect.Descriptor instead.
 func (*Recipe) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{6}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *Recipe) GetId() string {
@@ -947,7 +1018,7 @@ type GetRecipeRequest struct {
 
 func (x *GetRecipeRequest) Reset() {
 	*x = GetRecipeRequest{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[7]
+	mi := &file_frontendapi_frontend_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -959,7 +1030,7 @@ func (x *GetRecipeRequest) String() string {
 func (*GetRecipeRequest) ProtoMessage() {}
 
 func (x *GetRecipeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[7]
+	mi := &file_frontendapi_frontend_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -972,7 +1043,7 @@ func (x *GetRecipeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetRecipeRequest.ProtoReflect.Descriptor instead.
 func (*GetRecipeRequest) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{7}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetRecipeRequest) GetRecipeId() string {
@@ -998,7 +1069,7 @@ type GetRecipeResponse struct {
 
 func (x *GetRecipeResponse) Reset() {
 	*x = GetRecipeResponse{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[8]
+	mi := &file_frontendapi_frontend_proto_msgTypes[9]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1010,7 +1081,7 @@ func (x *GetRecipeResponse) String() string {
 func (*GetRecipeResponse) ProtoMessage() {}
 
 func (x *GetRecipeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[8]
+	mi := &file_frontendapi_frontend_proto_msgTypes[9]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1023,7 +1094,7 @@ func (x *GetRecipeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetRecipeResponse.ProtoReflect.Descriptor instead.
 func (*GetRecipeResponse) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{8}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *GetRecipeResponse) GetRecipe() *Recipe {
@@ -1058,7 +1129,7 @@ type Pagination struct {
 
 func (x *Pagination) Reset() {
 	*x = Pagination{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[9]
+	mi := &file_frontendapi_frontend_proto_msgTypes[10]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1070,7 +1141,7 @@ func (x *Pagination) String() string {
 func (*Pagination) ProtoMessage() {}
 
 func (x *Pagination) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[9]
+	mi := &file_frontendapi_frontend_proto_msgTypes[10]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1083,7 +1154,7 @@ func (x *Pagination) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Pagination.ProtoReflect.Descriptor instead.
 func (*Pagination) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{9}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *Pagination) GetLastId() string {
@@ -1117,7 +1188,7 @@ type RecipeSnippet struct {
 
 func (x *RecipeSnippet) Reset() {
 	*x = RecipeSnippet{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[10]
+	mi := &file_frontendapi_frontend_proto_msgTypes[11]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1129,7 +1200,7 @@ func (x *RecipeSnippet) String() string {
 func (*RecipeSnippet) ProtoMessage() {}
 
 func (x *RecipeSnippet) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[10]
+	mi := &file_frontendapi_frontend_proto_msgTypes[11]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1142,7 +1213,7 @@ func (x *RecipeSnippet) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RecipeSnippet.ProtoReflect.Descriptor instead.
 func (*RecipeSnippet) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{10}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *RecipeSnippet) GetId() string {
@@ -1189,7 +1260,7 @@ type ListRecipesRequest struct {
 
 func (x *ListRecipesRequest) Reset() {
 	*x = ListRecipesRequest{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[11]
+	mi := &file_frontendapi_frontend_proto_msgTypes[12]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1201,7 +1272,7 @@ func (x *ListRecipesRequest) String() string {
 func (*ListRecipesRequest) ProtoMessage() {}
 
 func (x *ListRecipesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[11]
+	mi := &file_frontendapi_frontend_proto_msgTypes[12]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1214,7 +1285,7 @@ func (x *ListRecipesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListRecipesRequest.ProtoReflect.Descriptor instead.
 func (*ListRecipesRequest) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{11}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *ListRecipesRequest) GetQuery() string {
@@ -1251,7 +1322,7 @@ type ListRecipesResponse struct {
 
 func (x *ListRecipesResponse) Reset() {
 	*x = ListRecipesResponse{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[12]
+	mi := &file_frontendapi_frontend_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1263,7 +1334,7 @@ func (x *ListRecipesResponse) String() string {
 func (*ListRecipesResponse) ProtoMessage() {}
 
 func (x *ListRecipesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[12]
+	mi := &file_frontendapi_frontend_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1276,7 +1347,7 @@ func (x *ListRecipesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListRecipesResponse.ProtoReflect.Descriptor instead.
 func (*ListRecipesResponse) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{12}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *ListRecipesResponse) GetRecipes() []*RecipeSnippet {
@@ -1317,7 +1388,7 @@ type StartChatRequest struct {
 
 func (x *StartChatRequest) Reset() {
 	*x = StartChatRequest{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[13]
+	mi := &file_frontendapi_frontend_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1329,7 +1400,7 @@ func (x *StartChatRequest) String() string {
 func (*StartChatRequest) ProtoMessage() {}
 
 func (x *StartChatRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[13]
+	mi := &file_frontendapi_frontend_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1342,7 +1413,7 @@ func (x *StartChatRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StartChatRequest.ProtoReflect.Descriptor instead.
 func (*StartChatRequest) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{13}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *StartChatRequest) GetRecipe() isStartChatRequest_Recipe {
@@ -1442,7 +1513,7 @@ type StartChatResponse struct {
 
 func (x *StartChatResponse) Reset() {
 	*x = StartChatResponse{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[14]
+	mi := &file_frontendapi_frontend_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1454,7 +1525,7 @@ func (x *StartChatResponse) String() string {
 func (*StartChatResponse) ProtoMessage() {}
 
 func (x *StartChatResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[14]
+	mi := &file_frontendapi_frontend_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1467,7 +1538,7 @@ func (x *StartChatResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StartChatResponse.ProtoReflect.Descriptor instead.
 func (*StartChatResponse) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{14}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *StartChatResponse) GetChatApiKey() string {
@@ -1522,7 +1593,7 @@ type AddRecipeRequest struct {
 
 func (x *AddRecipeRequest) Reset() {
 	*x = AddRecipeRequest{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[15]
+	mi := &file_frontendapi_frontend_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1534,7 +1605,7 @@ func (x *AddRecipeRequest) String() string {
 func (*AddRecipeRequest) ProtoMessage() {}
 
 func (x *AddRecipeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[15]
+	mi := &file_frontendapi_frontend_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1547,7 +1618,7 @@ func (x *AddRecipeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddRecipeRequest.ProtoReflect.Descriptor instead.
 func (*AddRecipeRequest) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{15}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{16}
 }
 
 func (x *AddRecipeRequest) GetTitle() string {
@@ -1616,7 +1687,7 @@ type AddRecipeResponse struct {
 
 func (x *AddRecipeResponse) Reset() {
 	*x = AddRecipeResponse{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[16]
+	mi := &file_frontendapi_frontend_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1628,7 +1699,7 @@ func (x *AddRecipeResponse) String() string {
 func (*AddRecipeResponse) ProtoMessage() {}
 
 func (x *AddRecipeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[16]
+	mi := &file_frontendapi_frontend_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1641,7 +1712,7 @@ func (x *AddRecipeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddRecipeResponse.ProtoReflect.Descriptor instead.
 func (*AddRecipeResponse) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{16}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *AddRecipeResponse) GetRecipeId() string {
@@ -1662,7 +1733,7 @@ type GenerateRecipeRequest struct {
 
 func (x *GenerateRecipeRequest) Reset() {
 	*x = GenerateRecipeRequest{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[17]
+	mi := &file_frontendapi_frontend_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1674,7 +1745,7 @@ func (x *GenerateRecipeRequest) String() string {
 func (*GenerateRecipeRequest) ProtoMessage() {}
 
 func (x *GenerateRecipeRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[17]
+	mi := &file_frontendapi_frontend_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1687,7 +1758,7 @@ func (x *GenerateRecipeRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateRecipeRequest.ProtoReflect.Descriptor instead.
 func (*GenerateRecipeRequest) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{17}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{18}
 }
 
 func (x *GenerateRecipeRequest) GetPrompt() string {
@@ -1708,7 +1779,7 @@ type GenerateRecipeResponse struct {
 
 func (x *GenerateRecipeResponse) Reset() {
 	*x = GenerateRecipeResponse{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[18]
+	mi := &file_frontendapi_frontend_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1720,7 +1791,7 @@ func (x *GenerateRecipeResponse) String() string {
 func (*GenerateRecipeResponse) ProtoMessage() {}
 
 func (x *GenerateRecipeResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[18]
+	mi := &file_frontendapi_frontend_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1733,7 +1804,7 @@ func (x *GenerateRecipeResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GenerateRecipeResponse.ProtoReflect.Descriptor instead.
 func (*GenerateRecipeResponse) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{18}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *GenerateRecipeResponse) GetAddRecipeRequest() *AddRecipeRequest {
@@ -1760,7 +1831,7 @@ type GeneratePlanRequest struct {
 
 func (x *GeneratePlanRequest) Reset() {
 	*x = GeneratePlanRequest{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[19]
+	mi := &file_frontendapi_frontend_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1772,7 +1843,7 @@ func (x *GeneratePlanRequest) String() string {
 func (*GeneratePlanRequest) ProtoMessage() {}
 
 func (x *GeneratePlanRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[19]
+	mi := &file_frontendapi_frontend_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1785,7 +1856,7 @@ func (x *GeneratePlanRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GeneratePlanRequest.ProtoReflect.Descriptor instead.
 func (*GeneratePlanRequest) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{19}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{20}
 }
 
 func (x *GeneratePlanRequest) GetNumDays() uint32 {
@@ -1825,7 +1896,7 @@ type GeneratePlanResponse struct {
 
 func (x *GeneratePlanResponse) Reset() {
 	*x = GeneratePlanResponse{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[20]
+	mi := &file_frontendapi_frontend_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1837,7 +1908,7 @@ func (x *GeneratePlanResponse) String() string {
 func (*GeneratePlanResponse) ProtoMessage() {}
 
 func (x *GeneratePlanResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[20]
+	mi := &file_frontendapi_frontend_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1850,7 +1921,7 @@ func (x *GeneratePlanResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GeneratePlanResponse.ProtoReflect.Descriptor instead.
 func (*GeneratePlanResponse) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{20}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{21}
 }
 
 // A group of steps within a plan that can be executed together.
@@ -1868,7 +1939,7 @@ type StepGroup struct {
 
 func (x *StepGroup) Reset() {
 	*x = StepGroup{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[21]
+	mi := &file_frontendapi_frontend_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1880,7 +1951,7 @@ func (x *StepGroup) String() string {
 func (*StepGroup) ProtoMessage() {}
 
 func (x *StepGroup) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[21]
+	mi := &file_frontendapi_frontend_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1893,7 +1964,7 @@ func (x *StepGroup) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use StepGroup.ProtoReflect.Descriptor instead.
 func (*StepGroup) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{21}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{22}
 }
 
 func (x *StepGroup) GetLabel() string {
@@ -1932,7 +2003,7 @@ type PlanSnippet struct {
 
 func (x *PlanSnippet) Reset() {
 	*x = PlanSnippet{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[22]
+	mi := &file_frontendapi_frontend_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1944,7 +2015,7 @@ func (x *PlanSnippet) String() string {
 func (*PlanSnippet) ProtoMessage() {}
 
 func (x *PlanSnippet) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[22]
+	mi := &file_frontendapi_frontend_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1957,7 +2028,7 @@ func (x *PlanSnippet) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PlanSnippet.ProtoReflect.Descriptor instead.
 func (*PlanSnippet) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{22}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *PlanSnippet) GetId() string {
@@ -1989,7 +2060,7 @@ type GetPlansRequest struct {
 
 func (x *GetPlansRequest) Reset() {
 	*x = GetPlansRequest{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[23]
+	mi := &file_frontendapi_frontend_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2001,7 +2072,7 @@ func (x *GetPlansRequest) String() string {
 func (*GetPlansRequest) ProtoMessage() {}
 
 func (x *GetPlansRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[23]
+	mi := &file_frontendapi_frontend_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2014,7 +2085,7 @@ func (x *GetPlansRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPlansRequest.ProtoReflect.Descriptor instead.
 func (*GetPlansRequest) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{23}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{24}
 }
 
 type GetPlansResponse struct {
@@ -2027,7 +2098,7 @@ type GetPlansResponse struct {
 
 func (x *GetPlansResponse) Reset() {
 	*x = GetPlansResponse{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[24]
+	mi := &file_frontendapi_frontend_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2039,7 +2110,7 @@ func (x *GetPlansResponse) String() string {
 func (*GetPlansResponse) ProtoMessage() {}
 
 func (x *GetPlansResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[24]
+	mi := &file_frontendapi_frontend_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2052,7 +2123,7 @@ func (x *GetPlansResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPlansResponse.ProtoReflect.Descriptor instead.
 func (*GetPlansResponse) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{24}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{25}
 }
 
 func (x *GetPlansResponse) GetPlans() []*PlanSnippet {
@@ -2083,7 +2154,7 @@ type Plan struct {
 
 func (x *Plan) Reset() {
 	*x = Plan{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[25]
+	mi := &file_frontendapi_frontend_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2095,7 +2166,7 @@ func (x *Plan) String() string {
 func (*Plan) ProtoMessage() {}
 
 func (x *Plan) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[25]
+	mi := &file_frontendapi_frontend_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2108,7 +2179,7 @@ func (x *Plan) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Plan.ProtoReflect.Descriptor instead.
 func (*Plan) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{25}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *Plan) GetId() string {
@@ -2171,7 +2242,7 @@ type GetPlanRequest struct {
 
 func (x *GetPlanRequest) Reset() {
 	*x = GetPlanRequest{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[26]
+	mi := &file_frontendapi_frontend_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2183,7 +2254,7 @@ func (x *GetPlanRequest) String() string {
 func (*GetPlanRequest) ProtoMessage() {}
 
 func (x *GetPlanRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[26]
+	mi := &file_frontendapi_frontend_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2196,7 +2267,7 @@ func (x *GetPlanRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPlanRequest.ProtoReflect.Descriptor instead.
 func (*GetPlanRequest) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{26}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *GetPlanRequest) GetPlanId() string {
@@ -2219,7 +2290,7 @@ type GetPlanResponse struct {
 
 func (x *GetPlanResponse) Reset() {
 	*x = GetPlanResponse{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[27]
+	mi := &file_frontendapi_frontend_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2231,7 +2302,7 @@ func (x *GetPlanResponse) String() string {
 func (*GetPlanResponse) ProtoMessage() {}
 
 func (x *GetPlanResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[27]
+	mi := &file_frontendapi_frontend_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2244,7 +2315,7 @@ func (x *GetPlanResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetPlanResponse.ProtoReflect.Descriptor instead.
 func (*GetPlanResponse) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{27}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *GetPlanResponse) GetPlan() *Plan {
@@ -2274,7 +2345,7 @@ type UpdatePlanRequest struct {
 
 func (x *UpdatePlanRequest) Reset() {
 	*x = UpdatePlanRequest{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[28]
+	mi := &file_frontendapi_frontend_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2286,7 +2357,7 @@ func (x *UpdatePlanRequest) String() string {
 func (*UpdatePlanRequest) ProtoMessage() {}
 
 func (x *UpdatePlanRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[28]
+	mi := &file_frontendapi_frontend_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2299,7 +2370,7 @@ func (x *UpdatePlanRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdatePlanRequest.ProtoReflect.Descriptor instead.
 func (*UpdatePlanRequest) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{28}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *UpdatePlanRequest) GetPlanId() string {
@@ -2325,7 +2396,7 @@ type UpdatePlanResponse struct {
 
 func (x *UpdatePlanResponse) Reset() {
 	*x = UpdatePlanResponse{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[29]
+	mi := &file_frontendapi_frontend_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2337,7 +2408,7 @@ func (x *UpdatePlanResponse) String() string {
 func (*UpdatePlanResponse) ProtoMessage() {}
 
 func (x *UpdatePlanResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[29]
+	mi := &file_frontendapi_frontend_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2350,7 +2421,7 @@ func (x *UpdatePlanResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdatePlanResponse.ProtoReflect.Descriptor instead.
 func (*UpdatePlanResponse) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{29}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *UpdatePlanResponse) GetPlan() *Plan {
@@ -2371,7 +2442,7 @@ type AddBookmarkRequest struct {
 
 func (x *AddBookmarkRequest) Reset() {
 	*x = AddBookmarkRequest{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[30]
+	mi := &file_frontendapi_frontend_proto_msgTypes[31]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2383,7 +2454,7 @@ func (x *AddBookmarkRequest) String() string {
 func (*AddBookmarkRequest) ProtoMessage() {}
 
 func (x *AddBookmarkRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[30]
+	mi := &file_frontendapi_frontend_proto_msgTypes[31]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2396,7 +2467,7 @@ func (x *AddBookmarkRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddBookmarkRequest.ProtoReflect.Descriptor instead.
 func (*AddBookmarkRequest) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{30}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *AddBookmarkRequest) GetRecipeId() string {
@@ -2415,7 +2486,7 @@ type AddBookmarkResponse struct {
 
 func (x *AddBookmarkResponse) Reset() {
 	*x = AddBookmarkResponse{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[31]
+	mi := &file_frontendapi_frontend_proto_msgTypes[32]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2427,7 +2498,7 @@ func (x *AddBookmarkResponse) String() string {
 func (*AddBookmarkResponse) ProtoMessage() {}
 
 func (x *AddBookmarkResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[31]
+	mi := &file_frontendapi_frontend_proto_msgTypes[32]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2440,7 +2511,7 @@ func (x *AddBookmarkResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddBookmarkResponse.ProtoReflect.Descriptor instead.
 func (*AddBookmarkResponse) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{31}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{32}
 }
 
 // A request for FrontendService.RemoveBookmark.
@@ -2454,7 +2525,7 @@ type RemoveBookmarkRequest struct {
 
 func (x *RemoveBookmarkRequest) Reset() {
 	*x = RemoveBookmarkRequest{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[32]
+	mi := &file_frontendapi_frontend_proto_msgTypes[33]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2466,7 +2537,7 @@ func (x *RemoveBookmarkRequest) String() string {
 func (*RemoveBookmarkRequest) ProtoMessage() {}
 
 func (x *RemoveBookmarkRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[32]
+	mi := &file_frontendapi_frontend_proto_msgTypes[33]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2479,7 +2550,7 @@ func (x *RemoveBookmarkRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveBookmarkRequest.ProtoReflect.Descriptor instead.
 func (*RemoveBookmarkRequest) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{32}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *RemoveBookmarkRequest) GetRecipeId() string {
@@ -2498,7 +2569,7 @@ type RemoveBookmarkResponse struct {
 
 func (x *RemoveBookmarkResponse) Reset() {
 	*x = RemoveBookmarkResponse{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[33]
+	mi := &file_frontendapi_frontend_proto_msgTypes[34]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2510,7 +2581,7 @@ func (x *RemoveBookmarkResponse) String() string {
 func (*RemoveBookmarkResponse) ProtoMessage() {}
 
 func (x *RemoveBookmarkResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[33]
+	mi := &file_frontendapi_frontend_proto_msgTypes[34]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2523,13 +2594,13 @@ func (x *RemoveBookmarkResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RemoveBookmarkResponse.ProtoReflect.Descriptor instead.
 func (*RemoveBookmarkResponse) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{33}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{34}
 }
 
 type ChatMessage struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
-	// Text content of the message.
-	Content string `protobuf:"bytes,1,opt,name=content,proto3" json:"content,omitempty"`
+	// The content of the message.
+	Content *ChatContent `protobuf:"bytes,1,opt,name=content,proto3" json:"content,omitempty"`
 	// The role of the message.
 	Role ChatMessage_Role `protobuf:"varint,2,opt,name=role,proto3,enum=frontendapi.ChatMessage_Role" json:"role,omitempty"`
 	// Any grounding URLs associated with the message.
@@ -2540,7 +2611,7 @@ type ChatMessage struct {
 
 func (x *ChatMessage) Reset() {
 	*x = ChatMessage{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[34]
+	mi := &file_frontendapi_frontend_proto_msgTypes[35]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2552,7 +2623,7 @@ func (x *ChatMessage) String() string {
 func (*ChatMessage) ProtoMessage() {}
 
 func (x *ChatMessage) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[34]
+	mi := &file_frontendapi_frontend_proto_msgTypes[35]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2565,14 +2636,14 @@ func (x *ChatMessage) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChatMessage.ProtoReflect.Descriptor instead.
 func (*ChatMessage) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{34}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{35}
 }
 
-func (x *ChatMessage) GetContent() string {
+func (x *ChatMessage) GetContent() *ChatContent {
 	if x != nil {
 		return x.Content
 	}
-	return ""
+	return nil
 }
 
 func (x *ChatMessage) GetRole() ChatMessage_Role {
@@ -2598,14 +2669,14 @@ type ChatPlanRequest struct {
 	// Whether to start a new chat session.
 	NewChat bool `protobuf:"varint,2,opt,name=new_chat,json=newChat,proto3" json:"new_chat,omitempty"`
 	// The message from the user.
-	Message       string `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
+	Message       *ChatContent `protobuf:"bytes,3,opt,name=message,proto3" json:"message,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
 func (x *ChatPlanRequest) Reset() {
 	*x = ChatPlanRequest{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[35]
+	mi := &file_frontendapi_frontend_proto_msgTypes[36]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2617,7 +2688,7 @@ func (x *ChatPlanRequest) String() string {
 func (*ChatPlanRequest) ProtoMessage() {}
 
 func (x *ChatPlanRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[35]
+	mi := &file_frontendapi_frontend_proto_msgTypes[36]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2630,7 +2701,7 @@ func (x *ChatPlanRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChatPlanRequest.ProtoReflect.Descriptor instead.
 func (*ChatPlanRequest) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{35}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{36}
 }
 
 func (x *ChatPlanRequest) GetChatId() string {
@@ -2647,11 +2718,11 @@ func (x *ChatPlanRequest) GetNewChat() bool {
 	return false
 }
 
-func (x *ChatPlanRequest) GetMessage() string {
+func (x *ChatPlanRequest) GetMessage() *ChatContent {
 	if x != nil {
 		return x.Message
 	}
-	return ""
+	return nil
 }
 
 // A response for FrontendService.ChatPlan.
@@ -2669,7 +2740,7 @@ type ChatPlanResponse struct {
 
 func (x *ChatPlanResponse) Reset() {
 	*x = ChatPlanResponse{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[36]
+	mi := &file_frontendapi_frontend_proto_msgTypes[37]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2681,7 +2752,7 @@ func (x *ChatPlanResponse) String() string {
 func (*ChatPlanResponse) ProtoMessage() {}
 
 func (x *ChatPlanResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[36]
+	mi := &file_frontendapi_frontend_proto_msgTypes[37]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2694,7 +2765,7 @@ func (x *ChatPlanResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChatPlanResponse.ProtoReflect.Descriptor instead.
 func (*ChatPlanResponse) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{36}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{37}
 }
 
 func (x *ChatPlanResponse) GetChatId() string {
@@ -2727,7 +2798,7 @@ type GetChatMessagesRequest struct {
 
 func (x *GetChatMessagesRequest) Reset() {
 	*x = GetChatMessagesRequest{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[37]
+	mi := &file_frontendapi_frontend_proto_msgTypes[38]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2739,7 +2810,7 @@ func (x *GetChatMessagesRequest) String() string {
 func (*GetChatMessagesRequest) ProtoMessage() {}
 
 func (x *GetChatMessagesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[37]
+	mi := &file_frontendapi_frontend_proto_msgTypes[38]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2752,7 +2823,7 @@ func (x *GetChatMessagesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetChatMessagesRequest.ProtoReflect.Descriptor instead.
 func (*GetChatMessagesRequest) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{37}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{38}
 }
 
 // A response for FrontendService.GetChatMessages.
@@ -2768,7 +2839,7 @@ type GetChatMessagesResponse struct {
 
 func (x *GetChatMessagesResponse) Reset() {
 	*x = GetChatMessagesResponse{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[38]
+	mi := &file_frontendapi_frontend_proto_msgTypes[39]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2780,7 +2851,7 @@ func (x *GetChatMessagesResponse) String() string {
 func (*GetChatMessagesResponse) ProtoMessage() {}
 
 func (x *GetChatMessagesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[38]
+	mi := &file_frontendapi_frontend_proto_msgTypes[39]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2793,7 +2864,7 @@ func (x *GetChatMessagesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetChatMessagesResponse.ProtoReflect.Descriptor instead.
 func (*GetChatMessagesResponse) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{38}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{39}
 }
 
 func (x *GetChatMessagesResponse) GetChatId() string {
@@ -2822,7 +2893,7 @@ type AddRecipeRequest_AddRecipeStep struct {
 
 func (x *AddRecipeRequest_AddRecipeStep) Reset() {
 	*x = AddRecipeRequest_AddRecipeStep{}
-	mi := &file_frontendapi_frontend_proto_msgTypes[39]
+	mi := &file_frontendapi_frontend_proto_msgTypes[40]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2834,7 +2905,7 @@ func (x *AddRecipeRequest_AddRecipeStep) String() string {
 func (*AddRecipeRequest_AddRecipeStep) ProtoMessage() {}
 
 func (x *AddRecipeRequest_AddRecipeStep) ProtoReflect() protoreflect.Message {
-	mi := &file_frontendapi_frontend_proto_msgTypes[39]
+	mi := &file_frontendapi_frontend_proto_msgTypes[40]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2847,7 +2918,7 @@ func (x *AddRecipeRequest_AddRecipeStep) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AddRecipeRequest_AddRecipeStep.ProtoReflect.Descriptor instead.
 func (*AddRecipeRequest_AddRecipeStep) Descriptor() ([]byte, []int) {
-	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{15, 0}
+	return file_frontendapi_frontend_proto_rawDescGZIP(), []int{16, 0}
 }
 
 func (x *AddRecipeRequest_AddRecipeStep) GetDescription() string {
@@ -2868,10 +2939,14 @@ var File_frontendapi_frontend_proto protoreflect.FileDescriptor
 
 const file_frontendapi_frontend_proto_rawDesc = "" +
 	"\n" +
-	"\x1afrontendapi/frontend.proto\x12\vfrontendapi\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"L\n" +
+	"\x1afrontendapi/frontend.proto\x12\vfrontendapi\x1a\x1bbuf/validate/validate.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"8\n" +
+	"\x05Image\x12\x12\n" +
+	"\x04data\x18\x01 \x01(\fR\x04data\x12\x1b\n" +
+	"\tmime_type\x18\x02 \x01(\tR\bmimeType\"x\n" +
 	"\vChatContent\x12\x1a\n" +
 	"\amessage\x18\x01 \x01(\tH\x00R\amessage\x12\x16\n" +
-	"\x05audio\x18\x02 \x01(\fH\x00R\x05audioB\t\n" +
+	"\x05audio\x18\x02 \x01(\fH\x00R\x05audio\x12*\n" +
+	"\x05image\x18\x03 \x01(\v2\x12.frontendapi.ImageH\x00R\x05imageB\t\n" +
 	"\apayload\"\x8d\x01\n" +
 	"\vChatRequest\x122\n" +
 	"\acontent\x18\x01 \x01(\v2\x18.frontendapi.ChatContentR\acontent\x12!\n" +
@@ -3015,19 +3090,19 @@ const file_frontendapi_frontend_proto_rawDesc = "" +
 	"\x13AddBookmarkResponse\"4\n" +
 	"\x15RemoveBookmarkRequest\x12\x1b\n" +
 	"\trecipe_id\x18\x01 \x01(\tR\brecipeId\"\x18\n" +
-	"\x16RemoveBookmarkResponse\"\xaf\x01\n" +
-	"\vChatMessage\x12\x18\n" +
-	"\acontent\x18\x01 \x01(\tR\acontent\x121\n" +
+	"\x16RemoveBookmarkResponse\"\xc9\x01\n" +
+	"\vChatMessage\x122\n" +
+	"\acontent\x18\x01 \x01(\v2\x18.frontendapi.ChatContentR\acontent\x121\n" +
 	"\x04role\x18\x02 \x01(\x0e2\x1d.frontendapi.ChatMessage.RoleR\x04role\x12\x12\n" +
 	"\x04urls\x18\x03 \x03(\tR\x04urls\"?\n" +
 	"\x04Role\x12\x14\n" +
 	"\x10ROLE_UNSPECIFIED\x10\x00\x12\r\n" +
 	"\tROLE_USER\x10\x01\x12\x12\n" +
-	"\x0eROLE_ASSISTANT\x10\x02\"_\n" +
+	"\x0eROLE_ASSISTANT\x10\x02\"y\n" +
 	"\x0fChatPlanRequest\x12\x17\n" +
 	"\achat_id\x18\x01 \x01(\tR\x06chatId\x12\x19\n" +
-	"\bnew_chat\x18\x02 \x01(\bR\anewChat\x12\x18\n" +
-	"\amessage\x18\x03 \x01(\tR\amessage\"z\n" +
+	"\bnew_chat\x18\x02 \x01(\bR\anewChat\x122\n" +
+	"\amessage\x18\x03 \x01(\v2\x18.frontendapi.ChatContentR\amessage\"z\n" +
 	"\x10ChatPlanResponse\x12\x17\n" +
 	"\achat_id\x18\x01 \x01(\tR\x06chatId\x124\n" +
 	"\bmessages\x18\x02 \x03(\v2\x18.frontendapi.ChatMessageR\bmessages\x12\x17\n" +
@@ -3093,7 +3168,7 @@ func file_frontendapi_frontend_proto_rawDescGZIP() []byte {
 }
 
 var file_frontendapi_frontend_proto_enumTypes = make([]protoimpl.EnumInfo, 7)
-var file_frontendapi_frontend_proto_msgTypes = make([]protoimpl.MessageInfo, 40)
+var file_frontendapi_frontend_proto_msgTypes = make([]protoimpl.MessageInfo, 41)
 var file_frontendapi_frontend_proto_goTypes = []any{
 	(Language)(0),                          // 0: frontendapi.Language
 	(RecipeGenre)(0),                       // 1: frontendapi.RecipeGenre
@@ -3102,115 +3177,119 @@ var file_frontendapi_frontend_proto_goTypes = []any{
 	(PlanStatus)(0),                        // 4: frontendapi.PlanStatus
 	(StartChatRequest_ModelProvider)(0),    // 5: frontendapi.StartChatRequest.ModelProvider
 	(ChatMessage_Role)(0),                  // 6: frontendapi.ChatMessage.Role
-	(*ChatContent)(nil),                    // 7: frontendapi.ChatContent
-	(*ChatRequest)(nil),                    // 8: frontendapi.ChatRequest
-	(*ChatResponse)(nil),                   // 9: frontendapi.ChatResponse
-	(*RecipeIngredient)(nil),               // 10: frontendapi.RecipeIngredient
-	(*RecipeStep)(nil),                     // 11: frontendapi.RecipeStep
-	(*IngredientSection)(nil),              // 12: frontendapi.IngredientSection
-	(*Recipe)(nil),                         // 13: frontendapi.Recipe
-	(*GetRecipeRequest)(nil),               // 14: frontendapi.GetRecipeRequest
-	(*GetRecipeResponse)(nil),              // 15: frontendapi.GetRecipeResponse
-	(*Pagination)(nil),                     // 16: frontendapi.Pagination
-	(*RecipeSnippet)(nil),                  // 17: frontendapi.RecipeSnippet
-	(*ListRecipesRequest)(nil),             // 18: frontendapi.ListRecipesRequest
-	(*ListRecipesResponse)(nil),            // 19: frontendapi.ListRecipesResponse
-	(*StartChatRequest)(nil),               // 20: frontendapi.StartChatRequest
-	(*StartChatResponse)(nil),              // 21: frontendapi.StartChatResponse
-	(*AddRecipeRequest)(nil),               // 22: frontendapi.AddRecipeRequest
-	(*AddRecipeResponse)(nil),              // 23: frontendapi.AddRecipeResponse
-	(*GenerateRecipeRequest)(nil),          // 24: frontendapi.GenerateRecipeRequest
-	(*GenerateRecipeResponse)(nil),         // 25: frontendapi.GenerateRecipeResponse
-	(*GeneratePlanRequest)(nil),            // 26: frontendapi.GeneratePlanRequest
-	(*GeneratePlanResponse)(nil),           // 27: frontendapi.GeneratePlanResponse
-	(*StepGroup)(nil),                      // 28: frontendapi.StepGroup
-	(*PlanSnippet)(nil),                    // 29: frontendapi.PlanSnippet
-	(*GetPlansRequest)(nil),                // 30: frontendapi.GetPlansRequest
-	(*GetPlansResponse)(nil),               // 31: frontendapi.GetPlansResponse
-	(*Plan)(nil),                           // 32: frontendapi.Plan
-	(*GetPlanRequest)(nil),                 // 33: frontendapi.GetPlanRequest
-	(*GetPlanResponse)(nil),                // 34: frontendapi.GetPlanResponse
-	(*UpdatePlanRequest)(nil),              // 35: frontendapi.UpdatePlanRequest
-	(*UpdatePlanResponse)(nil),             // 36: frontendapi.UpdatePlanResponse
-	(*AddBookmarkRequest)(nil),             // 37: frontendapi.AddBookmarkRequest
-	(*AddBookmarkResponse)(nil),            // 38: frontendapi.AddBookmarkResponse
-	(*RemoveBookmarkRequest)(nil),          // 39: frontendapi.RemoveBookmarkRequest
-	(*RemoveBookmarkResponse)(nil),         // 40: frontendapi.RemoveBookmarkResponse
-	(*ChatMessage)(nil),                    // 41: frontendapi.ChatMessage
-	(*ChatPlanRequest)(nil),                // 42: frontendapi.ChatPlanRequest
-	(*ChatPlanResponse)(nil),               // 43: frontendapi.ChatPlanResponse
-	(*GetChatMessagesRequest)(nil),         // 44: frontendapi.GetChatMessagesRequest
-	(*GetChatMessagesResponse)(nil),        // 45: frontendapi.GetChatMessagesResponse
-	(*AddRecipeRequest_AddRecipeStep)(nil), // 46: frontendapi.AddRecipeRequest.AddRecipeStep
-	(*timestamppb.Timestamp)(nil),          // 47: google.protobuf.Timestamp
+	(*Image)(nil),                          // 7: frontendapi.Image
+	(*ChatContent)(nil),                    // 8: frontendapi.ChatContent
+	(*ChatRequest)(nil),                    // 9: frontendapi.ChatRequest
+	(*ChatResponse)(nil),                   // 10: frontendapi.ChatResponse
+	(*RecipeIngredient)(nil),               // 11: frontendapi.RecipeIngredient
+	(*RecipeStep)(nil),                     // 12: frontendapi.RecipeStep
+	(*IngredientSection)(nil),              // 13: frontendapi.IngredientSection
+	(*Recipe)(nil),                         // 14: frontendapi.Recipe
+	(*GetRecipeRequest)(nil),               // 15: frontendapi.GetRecipeRequest
+	(*GetRecipeResponse)(nil),              // 16: frontendapi.GetRecipeResponse
+	(*Pagination)(nil),                     // 17: frontendapi.Pagination
+	(*RecipeSnippet)(nil),                  // 18: frontendapi.RecipeSnippet
+	(*ListRecipesRequest)(nil),             // 19: frontendapi.ListRecipesRequest
+	(*ListRecipesResponse)(nil),            // 20: frontendapi.ListRecipesResponse
+	(*StartChatRequest)(nil),               // 21: frontendapi.StartChatRequest
+	(*StartChatResponse)(nil),              // 22: frontendapi.StartChatResponse
+	(*AddRecipeRequest)(nil),               // 23: frontendapi.AddRecipeRequest
+	(*AddRecipeResponse)(nil),              // 24: frontendapi.AddRecipeResponse
+	(*GenerateRecipeRequest)(nil),          // 25: frontendapi.GenerateRecipeRequest
+	(*GenerateRecipeResponse)(nil),         // 26: frontendapi.GenerateRecipeResponse
+	(*GeneratePlanRequest)(nil),            // 27: frontendapi.GeneratePlanRequest
+	(*GeneratePlanResponse)(nil),           // 28: frontendapi.GeneratePlanResponse
+	(*StepGroup)(nil),                      // 29: frontendapi.StepGroup
+	(*PlanSnippet)(nil),                    // 30: frontendapi.PlanSnippet
+	(*GetPlansRequest)(nil),                // 31: frontendapi.GetPlansRequest
+	(*GetPlansResponse)(nil),               // 32: frontendapi.GetPlansResponse
+	(*Plan)(nil),                           // 33: frontendapi.Plan
+	(*GetPlanRequest)(nil),                 // 34: frontendapi.GetPlanRequest
+	(*GetPlanResponse)(nil),                // 35: frontendapi.GetPlanResponse
+	(*UpdatePlanRequest)(nil),              // 36: frontendapi.UpdatePlanRequest
+	(*UpdatePlanResponse)(nil),             // 37: frontendapi.UpdatePlanResponse
+	(*AddBookmarkRequest)(nil),             // 38: frontendapi.AddBookmarkRequest
+	(*AddBookmarkResponse)(nil),            // 39: frontendapi.AddBookmarkResponse
+	(*RemoveBookmarkRequest)(nil),          // 40: frontendapi.RemoveBookmarkRequest
+	(*RemoveBookmarkResponse)(nil),         // 41: frontendapi.RemoveBookmarkResponse
+	(*ChatMessage)(nil),                    // 42: frontendapi.ChatMessage
+	(*ChatPlanRequest)(nil),                // 43: frontendapi.ChatPlanRequest
+	(*ChatPlanResponse)(nil),               // 44: frontendapi.ChatPlanResponse
+	(*GetChatMessagesRequest)(nil),         // 45: frontendapi.GetChatMessagesRequest
+	(*GetChatMessagesResponse)(nil),        // 46: frontendapi.GetChatMessagesResponse
+	(*AddRecipeRequest_AddRecipeStep)(nil), // 47: frontendapi.AddRecipeRequest.AddRecipeStep
+	(*timestamppb.Timestamp)(nil),          // 48: google.protobuf.Timestamp
 }
 var file_frontendapi_frontend_proto_depIdxs = []int32{
-	7,  // 0: frontendapi.ChatRequest.content:type_name -> frontendapi.ChatContent
-	7,  // 1: frontendapi.ChatResponse.content:type_name -> frontendapi.ChatContent
-	10, // 2: frontendapi.IngredientSection.ingredients:type_name -> frontendapi.RecipeIngredient
-	2,  // 3: frontendapi.Recipe.source:type_name -> frontendapi.RecipeSource
-	3,  // 4: frontendapi.Recipe.status:type_name -> frontendapi.RecipeStatus
-	10, // 5: frontendapi.Recipe.ingredients:type_name -> frontendapi.RecipeIngredient
-	12, // 6: frontendapi.Recipe.additional_ingredients:type_name -> frontendapi.IngredientSection
-	11, // 7: frontendapi.Recipe.steps:type_name -> frontendapi.RecipeStep
-	0,  // 8: frontendapi.Recipe.language:type_name -> frontendapi.Language
-	13, // 9: frontendapi.GetRecipeResponse.recipe:type_name -> frontendapi.Recipe
-	16, // 10: frontendapi.ListRecipesRequest.pagination:type_name -> frontendapi.Pagination
-	17, // 11: frontendapi.ListRecipesResponse.recipes:type_name -> frontendapi.RecipeSnippet
-	16, // 12: frontendapi.ListRecipesResponse.pagination:type_name -> frontendapi.Pagination
-	5,  // 13: frontendapi.StartChatRequest.model_provider:type_name -> frontendapi.StartChatRequest.ModelProvider
-	10, // 14: frontendapi.AddRecipeRequest.ingredients:type_name -> frontendapi.RecipeIngredient
-	12, // 15: frontendapi.AddRecipeRequest.additional_ingredients:type_name -> frontendapi.IngredientSection
-	46, // 16: frontendapi.AddRecipeRequest.steps:type_name -> frontendapi.AddRecipeRequest.AddRecipeStep
-	0,  // 17: frontendapi.AddRecipeRequest.language:type_name -> frontendapi.Language
-	22, // 18: frontendapi.GenerateRecipeResponse.add_recipe_request:type_name -> frontendapi.AddRecipeRequest
-	1,  // 19: frontendapi.GeneratePlanRequest.genres:type_name -> frontendapi.RecipeGenre
-	11, // 20: frontendapi.StepGroup.steps:type_name -> frontendapi.RecipeStep
-	47, // 21: frontendapi.PlanSnippet.date:type_name -> google.protobuf.Timestamp
-	17, // 22: frontendapi.PlanSnippet.recipes:type_name -> frontendapi.RecipeSnippet
-	29, // 23: frontendapi.GetPlansResponse.plans:type_name -> frontendapi.PlanSnippet
-	4,  // 24: frontendapi.Plan.status:type_name -> frontendapi.PlanStatus
-	17, // 25: frontendapi.Plan.recipes:type_name -> frontendapi.RecipeSnippet
-	28, // 26: frontendapi.Plan.step_groups:type_name -> frontendapi.StepGroup
-	12, // 27: frontendapi.Plan.ingredients:type_name -> frontendapi.IngredientSection
-	32, // 28: frontendapi.GetPlanResponse.plan:type_name -> frontendapi.Plan
-	32, // 29: frontendapi.UpdatePlanResponse.plan:type_name -> frontendapi.Plan
-	6,  // 30: frontendapi.ChatMessage.role:type_name -> frontendapi.ChatMessage.Role
-	41, // 31: frontendapi.ChatPlanResponse.messages:type_name -> frontendapi.ChatMessage
-	41, // 32: frontendapi.GetChatMessagesResponse.messages:type_name -> frontendapi.ChatMessage
-	8,  // 33: frontendapi.ChatService.Chat:input_type -> frontendapi.ChatRequest
-	14, // 34: frontendapi.FrontendService.GetRecipe:input_type -> frontendapi.GetRecipeRequest
-	18, // 35: frontendapi.FrontendService.ListRecipes:input_type -> frontendapi.ListRecipesRequest
-	20, // 36: frontendapi.FrontendService.StartChat:input_type -> frontendapi.StartChatRequest
-	22, // 37: frontendapi.FrontendService.AddRecipe:input_type -> frontendapi.AddRecipeRequest
-	24, // 38: frontendapi.FrontendService.GenerateRecipe:input_type -> frontendapi.GenerateRecipeRequest
-	26, // 39: frontendapi.FrontendService.GeneratePlan:input_type -> frontendapi.GeneratePlanRequest
-	42, // 40: frontendapi.FrontendService.ChatPlan:input_type -> frontendapi.ChatPlanRequest
-	44, // 41: frontendapi.FrontendService.GetChatMessages:input_type -> frontendapi.GetChatMessagesRequest
-	30, // 42: frontendapi.FrontendService.GetPlans:input_type -> frontendapi.GetPlansRequest
-	33, // 43: frontendapi.FrontendService.GetPlan:input_type -> frontendapi.GetPlanRequest
-	35, // 44: frontendapi.FrontendService.UpdatePlan:input_type -> frontendapi.UpdatePlanRequest
-	37, // 45: frontendapi.FrontendService.AddBookmark:input_type -> frontendapi.AddBookmarkRequest
-	39, // 46: frontendapi.FrontendService.RemoveBookmark:input_type -> frontendapi.RemoveBookmarkRequest
-	9,  // 47: frontendapi.ChatService.Chat:output_type -> frontendapi.ChatResponse
-	15, // 48: frontendapi.FrontendService.GetRecipe:output_type -> frontendapi.GetRecipeResponse
-	19, // 49: frontendapi.FrontendService.ListRecipes:output_type -> frontendapi.ListRecipesResponse
-	21, // 50: frontendapi.FrontendService.StartChat:output_type -> frontendapi.StartChatResponse
-	23, // 51: frontendapi.FrontendService.AddRecipe:output_type -> frontendapi.AddRecipeResponse
-	25, // 52: frontendapi.FrontendService.GenerateRecipe:output_type -> frontendapi.GenerateRecipeResponse
-	27, // 53: frontendapi.FrontendService.GeneratePlan:output_type -> frontendapi.GeneratePlanResponse
-	43, // 54: frontendapi.FrontendService.ChatPlan:output_type -> frontendapi.ChatPlanResponse
-	45, // 55: frontendapi.FrontendService.GetChatMessages:output_type -> frontendapi.GetChatMessagesResponse
-	31, // 56: frontendapi.FrontendService.GetPlans:output_type -> frontendapi.GetPlansResponse
-	34, // 57: frontendapi.FrontendService.GetPlan:output_type -> frontendapi.GetPlanResponse
-	36, // 58: frontendapi.FrontendService.UpdatePlan:output_type -> frontendapi.UpdatePlanResponse
-	38, // 59: frontendapi.FrontendService.AddBookmark:output_type -> frontendapi.AddBookmarkResponse
-	40, // 60: frontendapi.FrontendService.RemoveBookmark:output_type -> frontendapi.RemoveBookmarkResponse
-	47, // [47:61] is the sub-list for method output_type
-	33, // [33:47] is the sub-list for method input_type
-	33, // [33:33] is the sub-list for extension type_name
-	33, // [33:33] is the sub-list for extension extendee
-	0,  // [0:33] is the sub-list for field type_name
+	7,  // 0: frontendapi.ChatContent.image:type_name -> frontendapi.Image
+	8,  // 1: frontendapi.ChatRequest.content:type_name -> frontendapi.ChatContent
+	8,  // 2: frontendapi.ChatResponse.content:type_name -> frontendapi.ChatContent
+	11, // 3: frontendapi.IngredientSection.ingredients:type_name -> frontendapi.RecipeIngredient
+	2,  // 4: frontendapi.Recipe.source:type_name -> frontendapi.RecipeSource
+	3,  // 5: frontendapi.Recipe.status:type_name -> frontendapi.RecipeStatus
+	11, // 6: frontendapi.Recipe.ingredients:type_name -> frontendapi.RecipeIngredient
+	13, // 7: frontendapi.Recipe.additional_ingredients:type_name -> frontendapi.IngredientSection
+	12, // 8: frontendapi.Recipe.steps:type_name -> frontendapi.RecipeStep
+	0,  // 9: frontendapi.Recipe.language:type_name -> frontendapi.Language
+	14, // 10: frontendapi.GetRecipeResponse.recipe:type_name -> frontendapi.Recipe
+	17, // 11: frontendapi.ListRecipesRequest.pagination:type_name -> frontendapi.Pagination
+	18, // 12: frontendapi.ListRecipesResponse.recipes:type_name -> frontendapi.RecipeSnippet
+	17, // 13: frontendapi.ListRecipesResponse.pagination:type_name -> frontendapi.Pagination
+	5,  // 14: frontendapi.StartChatRequest.model_provider:type_name -> frontendapi.StartChatRequest.ModelProvider
+	11, // 15: frontendapi.AddRecipeRequest.ingredients:type_name -> frontendapi.RecipeIngredient
+	13, // 16: frontendapi.AddRecipeRequest.additional_ingredients:type_name -> frontendapi.IngredientSection
+	47, // 17: frontendapi.AddRecipeRequest.steps:type_name -> frontendapi.AddRecipeRequest.AddRecipeStep
+	0,  // 18: frontendapi.AddRecipeRequest.language:type_name -> frontendapi.Language
+	23, // 19: frontendapi.GenerateRecipeResponse.add_recipe_request:type_name -> frontendapi.AddRecipeRequest
+	1,  // 20: frontendapi.GeneratePlanRequest.genres:type_name -> frontendapi.RecipeGenre
+	12, // 21: frontendapi.StepGroup.steps:type_name -> frontendapi.RecipeStep
+	48, // 22: frontendapi.PlanSnippet.date:type_name -> google.protobuf.Timestamp
+	18, // 23: frontendapi.PlanSnippet.recipes:type_name -> frontendapi.RecipeSnippet
+	30, // 24: frontendapi.GetPlansResponse.plans:type_name -> frontendapi.PlanSnippet
+	4,  // 25: frontendapi.Plan.status:type_name -> frontendapi.PlanStatus
+	18, // 26: frontendapi.Plan.recipes:type_name -> frontendapi.RecipeSnippet
+	29, // 27: frontendapi.Plan.step_groups:type_name -> frontendapi.StepGroup
+	13, // 28: frontendapi.Plan.ingredients:type_name -> frontendapi.IngredientSection
+	33, // 29: frontendapi.GetPlanResponse.plan:type_name -> frontendapi.Plan
+	33, // 30: frontendapi.UpdatePlanResponse.plan:type_name -> frontendapi.Plan
+	8,  // 31: frontendapi.ChatMessage.content:type_name -> frontendapi.ChatContent
+	6,  // 32: frontendapi.ChatMessage.role:type_name -> frontendapi.ChatMessage.Role
+	8,  // 33: frontendapi.ChatPlanRequest.message:type_name -> frontendapi.ChatContent
+	42, // 34: frontendapi.ChatPlanResponse.messages:type_name -> frontendapi.ChatMessage
+	42, // 35: frontendapi.GetChatMessagesResponse.messages:type_name -> frontendapi.ChatMessage
+	9,  // 36: frontendapi.ChatService.Chat:input_type -> frontendapi.ChatRequest
+	15, // 37: frontendapi.FrontendService.GetRecipe:input_type -> frontendapi.GetRecipeRequest
+	19, // 38: frontendapi.FrontendService.ListRecipes:input_type -> frontendapi.ListRecipesRequest
+	21, // 39: frontendapi.FrontendService.StartChat:input_type -> frontendapi.StartChatRequest
+	23, // 40: frontendapi.FrontendService.AddRecipe:input_type -> frontendapi.AddRecipeRequest
+	25, // 41: frontendapi.FrontendService.GenerateRecipe:input_type -> frontendapi.GenerateRecipeRequest
+	27, // 42: frontendapi.FrontendService.GeneratePlan:input_type -> frontendapi.GeneratePlanRequest
+	43, // 43: frontendapi.FrontendService.ChatPlan:input_type -> frontendapi.ChatPlanRequest
+	45, // 44: frontendapi.FrontendService.GetChatMessages:input_type -> frontendapi.GetChatMessagesRequest
+	31, // 45: frontendapi.FrontendService.GetPlans:input_type -> frontendapi.GetPlansRequest
+	34, // 46: frontendapi.FrontendService.GetPlan:input_type -> frontendapi.GetPlanRequest
+	36, // 47: frontendapi.FrontendService.UpdatePlan:input_type -> frontendapi.UpdatePlanRequest
+	38, // 48: frontendapi.FrontendService.AddBookmark:input_type -> frontendapi.AddBookmarkRequest
+	40, // 49: frontendapi.FrontendService.RemoveBookmark:input_type -> frontendapi.RemoveBookmarkRequest
+	10, // 50: frontendapi.ChatService.Chat:output_type -> frontendapi.ChatResponse
+	16, // 51: frontendapi.FrontendService.GetRecipe:output_type -> frontendapi.GetRecipeResponse
+	20, // 52: frontendapi.FrontendService.ListRecipes:output_type -> frontendapi.ListRecipesResponse
+	22, // 53: frontendapi.FrontendService.StartChat:output_type -> frontendapi.StartChatResponse
+	24, // 54: frontendapi.FrontendService.AddRecipe:output_type -> frontendapi.AddRecipeResponse
+	26, // 55: frontendapi.FrontendService.GenerateRecipe:output_type -> frontendapi.GenerateRecipeResponse
+	28, // 56: frontendapi.FrontendService.GeneratePlan:output_type -> frontendapi.GeneratePlanResponse
+	44, // 57: frontendapi.FrontendService.ChatPlan:output_type -> frontendapi.ChatPlanResponse
+	46, // 58: frontendapi.FrontendService.GetChatMessages:output_type -> frontendapi.GetChatMessagesResponse
+	32, // 59: frontendapi.FrontendService.GetPlans:output_type -> frontendapi.GetPlansResponse
+	35, // 60: frontendapi.FrontendService.GetPlan:output_type -> frontendapi.GetPlanResponse
+	37, // 61: frontendapi.FrontendService.UpdatePlan:output_type -> frontendapi.UpdatePlanResponse
+	39, // 62: frontendapi.FrontendService.AddBookmark:output_type -> frontendapi.AddBookmarkResponse
+	41, // 63: frontendapi.FrontendService.RemoveBookmark:output_type -> frontendapi.RemoveBookmarkResponse
+	50, // [50:64] is the sub-list for method output_type
+	36, // [36:50] is the sub-list for method input_type
+	36, // [36:36] is the sub-list for extension type_name
+	36, // [36:36] is the sub-list for extension extendee
+	0,  // [0:36] is the sub-list for field type_name
 }
 
 func init() { file_frontendapi_frontend_proto_init() }
@@ -3218,15 +3297,16 @@ func file_frontendapi_frontend_proto_init() {
 	if File_frontendapi_frontend_proto != nil {
 		return
 	}
-	file_frontendapi_frontend_proto_msgTypes[0].OneofWrappers = []any{
+	file_frontendapi_frontend_proto_msgTypes[1].OneofWrappers = []any{
 		(*ChatContent_Message)(nil),
 		(*ChatContent_Audio)(nil),
+		(*ChatContent_Image)(nil),
 	}
-	file_frontendapi_frontend_proto_msgTypes[1].OneofWrappers = []any{
+	file_frontendapi_frontend_proto_msgTypes[2].OneofWrappers = []any{
 		(*ChatRequest_RecipeText)(nil),
 		(*ChatRequest_RecipeId)(nil),
 	}
-	file_frontendapi_frontend_proto_msgTypes[13].OneofWrappers = []any{
+	file_frontendapi_frontend_proto_msgTypes[14].OneofWrappers = []any{
 		(*StartChatRequest_RecipeText)(nil),
 		(*StartChatRequest_RecipeId)(nil),
 		(*StartChatRequest_PlanId)(nil),
@@ -3237,7 +3317,7 @@ func file_frontendapi_frontend_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_frontendapi_frontend_proto_rawDesc), len(file_frontendapi_frontend_proto_rawDesc)),
 			NumEnums:      7,
-			NumMessages:   40,
+			NumMessages:   41,
 			NumExtensions: 0,
 			NumServices:   2,
 		},

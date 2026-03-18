@@ -13,7 +13,35 @@ import type { Message } from "@bufbuild/protobuf";
  * Describes the file frontendapi/frontend.proto.
  */
 export const file_frontendapi_frontend: GenFile = /*@__PURE__*/
-  fileDesc("Chpmcm9udGVuZGFwaS9mcm9udGVuZC5wcm90bxILZnJvbnRlbmRhcGkiPAoLQ2hhdENvbnRlbnQSEQoHbWVzc2FnZRgBIAEoCUgAEg8KBWF1ZGlvGAIgASgMSABCCQoHcGF5bG9hZCJuCgtDaGF0UmVxdWVzdBIpCgdjb250ZW50GAEgASgLMhguZnJvbnRlbmRhcGkuQ2hhdENvbnRlbnQSFQoLcmVjaXBlX3RleHQYAiABKAlIABITCglyZWNpcGVfaWQYAyABKAlIAEIICgZyZWNpcGUiOQoMQ2hhdFJlc3BvbnNlEikKB2NvbnRlbnQYASABKAsyGC5mcm9udGVuZGFwaS5DaGF0Q29udGVudCIyChBSZWNpcGVJbmdyZWRpZW50EgwKBG5hbWUYASABKAkSEAoIcXVhbnRpdHkYAiABKAkiNAoKUmVjaXBlU3RlcBITCgtkZXNjcmlwdGlvbhgBIAEoCRIRCglpbWFnZV91cmwYAiABKAkiVgoRSW5ncmVkaWVudFNlY3Rpb24SDQoFdGl0bGUYASABKAkSMgoLaW5ncmVkaWVudHMYAiADKAsyHS5mcm9udGVuZGFwaS5SZWNpcGVJbmdyZWRpZW50IosDCgZSZWNpcGUSCgoCaWQYASABKAkSKQoGc291cmNlGAIgASgOMhkuZnJvbnRlbmRhcGkuUmVjaXBlU291cmNlEikKBnN0YXR1cxgDIAEoDjIZLmZyb250ZW5kYXBpLlJlY2lwZVN0YXR1cxINCgV0aXRsZRgEIAEoCRIRCglpbWFnZV91cmwYBSABKAkSEwoLZGVzY3JpcHRpb24YBiABKAkSMgoLaW5ncmVkaWVudHMYByADKAsyHS5mcm9udGVuZGFwaS5SZWNpcGVJbmdyZWRpZW50Ej4KFmFkZGl0aW9uYWxfaW5ncmVkaWVudHMYCCADKAsyHi5mcm9udGVuZGFwaS5JbmdyZWRpZW50U2VjdGlvbhImCgVzdGVwcxgJIAMoCzIXLmZyb250ZW5kYXBpLlJlY2lwZVN0ZXASDQoFbm90ZXMYCiABKAkSFAoMc2VydmluZ19zaXplGAsgASgJEicKCGxhbmd1YWdlGAwgASgOMhUuZnJvbnRlbmRhcGkuTGFuZ3VhZ2UiJQoQR2V0UmVjaXBlUmVxdWVzdBIRCglyZWNpcGVfaWQYASABKAkiYwoRR2V0UmVjaXBlUmVzcG9uc2USIwoGcmVjaXBlGAEgASgLMhMuZnJvbnRlbmRhcGkuUmVjaXBlEhIKCmxsbV9wcm9tcHQYAiABKAkSFQoNaXNfYm9va21hcmtlZBgDIAEoCCI7CgpQYWdpbmF0aW9uEg8KB2xhc3RfaWQYASABKAkSHAoUbGFzdF90aW1lc3RhbXBfbmFub3MYAiABKAMiTgoNUmVjaXBlU25pcHBldBIKCgJpZBgBIAEoCRINCgV0aXRsZRgCIAEoCRIPCgdzdW1tYXJ5GAMgASgJEhEKCWltYWdlX3VybBgEIAEoCSJjChJMaXN0UmVjaXBlc1JlcXVlc3QSDQoFcXVlcnkYASABKAkSEQoJYm9va21hcmtzGAMgASgIEisKCnBhZ2luYXRpb24YAiABKAsyFy5mcm9udGVuZGFwaS5QYWdpbmF0aW9uIm8KE0xpc3RSZWNpcGVzUmVzcG9uc2USKwoHcmVjaXBlcxgBIAMoCzIaLmZyb250ZW5kYXBpLlJlY2lwZVNuaXBwZXQSKwoKcGFnaW5hdGlvbhgCIAEoCzIXLmZyb250ZW5kYXBpLlBhZ2luYXRpb24isAIKEFN0YXJ0Q2hhdFJlcXVlc3QSFQoLcmVjaXBlX3RleHQYAiABKAlIABITCglyZWNpcGVfaWQYAyABKAlIABIRCgdwbGFuX2lkGAYgASgJSAASQwoObW9kZWxfcHJvdmlkZXIYBCABKA4yKy5mcm9udGVuZGFwaS5TdGFydENoYXRSZXF1ZXN0Lk1vZGVsUHJvdmlkZXISEgoKbGxtX3Byb21wdBgFIAEoCRINCgVtb2RlbBgHIAEoCSJrCg1Nb2RlbFByb3ZpZGVyEh4KGk1PREVMX1BST1ZJREVSX1VOU1BFQ0lGSUVEEAASHwobTU9ERUxfUFJPVklERVJfR09PR0xFX0dFTkFJEAESGQoVTU9ERUxfUFJPVklERVJfT1BFTkFJEAJCCAoGcmVjaXBlIm8KEVN0YXJ0Q2hhdFJlc3BvbnNlEhQKDGNoYXRfYXBpX2tleRgBIAEoCRISCgpjaGF0X21vZGVsGAIgASgJEhkKEWNoYXRfaW5zdHJ1Y3Rpb25zGAMgASgJEhUKDXN0YXJ0X21lc3NhZ2UYBCABKAkigAMKEEFkZFJlY2lwZVJlcXVlc3QSDQoFdGl0bGUYASABKAkSGwoTbWFpbl9pbWFnZV9kYXRhX3VybBgCIAEoCRITCgtkZXNjcmlwdGlvbhgDIAEoCRIyCgtpbmdyZWRpZW50cxgEIAMoCzIdLmZyb250ZW5kYXBpLlJlY2lwZUluZ3JlZGllbnQSPgoWYWRkaXRpb25hbF9pbmdyZWRpZW50cxgFIAMoCzIeLmZyb250ZW5kYXBpLkluZ3JlZGllbnRTZWN0aW9uEjoKBXN0ZXBzGAYgAygLMisuZnJvbnRlbmRhcGkuQWRkUmVjaXBlUmVxdWVzdC5BZGRSZWNpcGVTdGVwEhQKDHNlcnZpbmdfc2l6ZRgHIAEoCRInCghsYW5ndWFnZRgIIAEoDjIVLmZyb250ZW5kYXBpLkxhbmd1YWdlGjwKDUFkZFJlY2lwZVN0ZXASEwoLZGVzY3JpcHRpb24YASABKAkSFgoOaW1hZ2VfZGF0YV91cmwYAiABKAkiJgoRQWRkUmVjaXBlUmVzcG9uc2USEQoJcmVjaXBlX2lkGAEgASgJIicKFUdlbmVyYXRlUmVjaXBlUmVxdWVzdBIOCgZwcm9tcHQYASABKAkiUwoWR2VuZXJhdGVSZWNpcGVSZXNwb25zZRI5ChJhZGRfcmVjaXBlX3JlcXVlc3QYASABKAsyHS5mcm9udGVuZGFwaS5BZGRSZWNpcGVSZXF1ZXN0InoKE0dlbmVyYXRlUGxhblJlcXVlc3QSEAoIbnVtX2RheXMYASABKA0SEwoLaW5ncmVkaWVudHMYAiADKAkSKAoGZ2VucmVzGAMgAygOMhguZnJvbnRlbmRhcGkuUmVjaXBlR2VucmUSEgoKcmVjaXBlX2lkcxgEIAMoCSIWChRHZW5lcmF0ZVBsYW5SZXNwb25zZSJQCglTdGVwR3JvdXASDQoFbGFiZWwYASABKAkSJgoFc3RlcHMYAiADKAsyFy5mcm9udGVuZGFwaS5SZWNpcGVTdGVwEgwKBG5vdGUYAyABKAkieAoLUGxhblNuaXBwZXQSCgoCaWQYASABKAkSMAoEZGF0ZRgCIAEoCzIaLmdvb2dsZS5wcm90b2J1Zi5UaW1lc3RhbXBCBrpIA8gBARIrCgdyZWNpcGVzGAMgAygLMhouZnJvbnRlbmRhcGkuUmVjaXBlU25pcHBldCIRCg9HZXRQbGFuc1JlcXVlc3QiOwoQR2V0UGxhbnNSZXNwb25zZRInCgVwbGFucxgBIAMoCzIYLmZyb250ZW5kYXBpLlBsYW5TbmlwcGV0IvABCgRQbGFuEgoKAmlkGAEgASgJEicKBnN0YXR1cxgCIAEoDjIXLmZyb250ZW5kYXBpLlBsYW5TdGF0dXMSKwoHcmVjaXBlcxgDIAMoCzIaLmZyb250ZW5kYXBpLlJlY2lwZVNuaXBwZXQSKwoLc3RlcF9ncm91cHMYBCADKAsyFi5mcm9udGVuZGFwaS5TdGVwR3JvdXASDQoFbm90ZXMYBSADKAkSMwoLaW5ncmVkaWVudHMYBiADKAsyHi5mcm9udGVuZGFwaS5JbmdyZWRpZW50U2VjdGlvbhIVCg1zZXJ2aW5nX3NpemVzGAcgAygJIiEKDkdldFBsYW5SZXF1ZXN0Eg8KB3BsYW5faWQYASABKAkiTgoPR2V0UGxhblJlc3BvbnNlEicKBHBsYW4YASABKAsyES5mcm9udGVuZGFwaS5QbGFuQga6SAPIAQESEgoKbGxtX3Byb21wdBgCIAEoCSI4ChFVcGRhdGVQbGFuUmVxdWVzdBIPCgdwbGFuX2lkGAEgASgJEhIKCnJlY2lwZV9pZHMYAiADKAkiPQoSVXBkYXRlUGxhblJlc3BvbnNlEicKBHBsYW4YASABKAsyES5mcm9udGVuZGFwaS5QbGFuQga6SAPIAQEiJwoSQWRkQm9va21hcmtSZXF1ZXN0EhEKCXJlY2lwZV9pZBgBIAEoCSIVChNBZGRCb29rbWFya1Jlc3BvbnNlIioKFVJlbW92ZUJvb2ttYXJrUmVxdWVzdBIRCglyZWNpcGVfaWQYASABKAkiGAoWUmVtb3ZlQm9va21hcmtSZXNwb25zZSKaAQoLQ2hhdE1lc3NhZ2USDwoHY29udGVudBgBIAEoCRIrCgRyb2xlGAIgASgOMh0uZnJvbnRlbmRhcGkuQ2hhdE1lc3NhZ2UuUm9sZRIMCgR1cmxzGAMgAygJIj8KBFJvbGUSFAoQUk9MRV9VTlNQRUNJRklFRBAAEg0KCVJPTEVfVVNFUhABEhIKDlJPTEVfQVNTSVNUQU5UEAIiRQoPQ2hhdFBsYW5SZXF1ZXN0Eg8KB2NoYXRfaWQYASABKAkSEAoIbmV3X2NoYXQYAiABKAgSDwoHbWVzc2FnZRgDIAEoCSJgChBDaGF0UGxhblJlc3BvbnNlEg8KB2NoYXRfaWQYASABKAkSKgoIbWVzc2FnZXMYAiADKAsyGC5mcm9udGVuZGFwaS5DaGF0TWVzc2FnZRIPCgdwbGFuX2lkGAMgASgJIhgKFkdldENoYXRNZXNzYWdlc1JlcXVlc3QiVgoXR2V0Q2hhdE1lc3NhZ2VzUmVzcG9uc2USDwoHY2hhdF9pZBgBIAEoCRIqCghtZXNzYWdlcxgCIAMoCzIYLmZyb250ZW5kYXBpLkNoYXRNZXNzYWdlKlEKCExhbmd1YWdlEhgKFExBTkdVQUdFX1VOU1BFQ0lGSUVEEAASFAoQTEFOR1VBR0VfRU5HTElTSBABEhUKEUxBTkdVQUdFX0pBUEFORVNFEAIqxgEKC1JlY2lwZUdlbnJlEhwKGFJFQ0lQRV9HRU5SRV9VTlNQRUNJRklFRBAAEhkKFVJFQ0lQRV9HRU5SRV9KQVBBTkVTRRABEhgKFFJFQ0lQRV9HRU5SRV9DSElORVNFEAISGAoUUkVDSVBFX0dFTlJFX1dFU1RFUk4QAxIXChNSRUNJUEVfR0VOUkVfS09SRUFOEAQSGAoUUkVDSVBFX0dFTlJFX0lUQUxJQU4QBRIXChNSRUNJUEVfR0VOUkVfRVRITklDEAYqiQEKDFJlY2lwZVNvdXJjZRIdChlSRUNJUEVfU09VUkNFX1VOU1BFQ0lGSUVEEAASGQoVUkVDSVBFX1NPVVJDRV9DT09LUEFEEAESHQoZUkVDSVBFX1NPVVJDRV9PUkFOR0VfUEFHRRACEiAKHFJFQ0lQRV9TT1VSQ0VfREVMSVNIX0tJVENIRU4QAyplCgxSZWNpcGVTdGF0dXMSHQoZUkVDSVBFX1NUQVRVU19VTlNQRUNJRklFRBAAEhwKGFJFQ0lQRV9TVEFUVVNfUFJPQ0VTU0lORxABEhgKFFJFQ0lQRV9TVEFUVVNfQUNUSVZFEAIqXQoKUGxhblN0YXR1cxIbChdQTEFOX1NUQVRVU19VTlNQRUNJRklFRBAAEhoKFlBMQU5fU1RBVFVTX1BST0NFU1NJTkcQARIWChJQTEFOX1NUQVRVU19BQ1RJVkUQAjJOCgtDaGF0U2VydmljZRI/CgRDaGF0EhguZnJvbnRlbmRhcGkuQ2hhdFJlcXVlc3QaGS5mcm9udGVuZGFwaS5DaGF0UmVzcG9uc2UoATABMqkICg9Gcm9udGVuZFNlcnZpY2USSgoJR2V0UmVjaXBlEh0uZnJvbnRlbmRhcGkuR2V0UmVjaXBlUmVxdWVzdBoeLmZyb250ZW5kYXBpLkdldFJlY2lwZVJlc3BvbnNlElAKC0xpc3RSZWNpcGVzEh8uZnJvbnRlbmRhcGkuTGlzdFJlY2lwZXNSZXF1ZXN0GiAuZnJvbnRlbmRhcGkuTGlzdFJlY2lwZXNSZXNwb25zZRJKCglTdGFydENoYXQSHS5mcm9udGVuZGFwaS5TdGFydENoYXRSZXF1ZXN0Gh4uZnJvbnRlbmRhcGkuU3RhcnRDaGF0UmVzcG9uc2USSgoJQWRkUmVjaXBlEh0uZnJvbnRlbmRhcGkuQWRkUmVjaXBlUmVxdWVzdBoeLmZyb250ZW5kYXBpLkFkZFJlY2lwZVJlc3BvbnNlElkKDkdlbmVyYXRlUmVjaXBlEiIuZnJvbnRlbmRhcGkuR2VuZXJhdGVSZWNpcGVSZXF1ZXN0GiMuZnJvbnRlbmRhcGkuR2VuZXJhdGVSZWNpcGVSZXNwb25zZRJTCgxHZW5lcmF0ZVBsYW4SIC5mcm9udGVuZGFwaS5HZW5lcmF0ZVBsYW5SZXF1ZXN0GiEuZnJvbnRlbmRhcGkuR2VuZXJhdGVQbGFuUmVzcG9uc2USRwoIQ2hhdFBsYW4SHC5mcm9udGVuZGFwaS5DaGF0UGxhblJlcXVlc3QaHS5mcm9udGVuZGFwaS5DaGF0UGxhblJlc3BvbnNlElwKD0dldENoYXRNZXNzYWdlcxIjLmZyb250ZW5kYXBpLkdldENoYXRNZXNzYWdlc1JlcXVlc3QaJC5mcm9udGVuZGFwaS5HZXRDaGF0TWVzc2FnZXNSZXNwb25zZRJHCghHZXRQbGFucxIcLmZyb250ZW5kYXBpLkdldFBsYW5zUmVxdWVzdBodLmZyb250ZW5kYXBpLkdldFBsYW5zUmVzcG9uc2USRAoHR2V0UGxhbhIbLmZyb250ZW5kYXBpLkdldFBsYW5SZXF1ZXN0GhwuZnJvbnRlbmRhcGkuR2V0UGxhblJlc3BvbnNlEk0KClVwZGF0ZVBsYW4SHi5mcm9udGVuZGFwaS5VcGRhdGVQbGFuUmVxdWVzdBofLmZyb250ZW5kYXBpLlVwZGF0ZVBsYW5SZXNwb25zZRJQCgtBZGRCb29rbWFyaxIfLmZyb250ZW5kYXBpLkFkZEJvb2ttYXJrUmVxdWVzdBogLmZyb250ZW5kYXBpLkFkZEJvb2ttYXJrUmVzcG9uc2USWQoOUmVtb3ZlQm9va21hcmsSIi5mcm9udGVuZGFwaS5SZW1vdmVCb29rbWFya1JlcXVlc3QaIy5mcm9udGVuZGFwaS5SZW1vdmVCb29rbWFya1Jlc3BvbnNlQj1aO2dpdGh1Yi5jb20vY3VyaW9zd2l0Y2gvY29va2NoYXQvZnJvbnRlbmQvYXBpL2dvO2Zyb250ZW5kYXBpYgZwcm90bzM", [file_buf_validate_validate, file_google_protobuf_timestamp]);
+  fileDesc("Chpmcm9udGVuZGFwaS9mcm9udGVuZC5wcm90bxILZnJvbnRlbmRhcGkiKAoFSW1hZ2USDAoEZGF0YRgBIAEoDBIRCgltaW1lX3R5cGUYAiABKAkiYQoLQ2hhdENvbnRlbnQSEQoHbWVzc2FnZRgBIAEoCUgAEg8KBWF1ZGlvGAIgASgMSAASIwoFaW1hZ2UYAyABKAsyEi5mcm9udGVuZGFwaS5JbWFnZUgAQgkKB3BheWxvYWQibgoLQ2hhdFJlcXVlc3QSKQoHY29udGVudBgBIAEoCzIYLmZyb250ZW5kYXBpLkNoYXRDb250ZW50EhUKC3JlY2lwZV90ZXh0GAIgASgJSAASEwoJcmVjaXBlX2lkGAMgASgJSABCCAoGcmVjaXBlIjkKDENoYXRSZXNwb25zZRIpCgdjb250ZW50GAEgASgLMhguZnJvbnRlbmRhcGkuQ2hhdENvbnRlbnQiMgoQUmVjaXBlSW5ncmVkaWVudBIMCgRuYW1lGAEgASgJEhAKCHF1YW50aXR5GAIgASgJIjQKClJlY2lwZVN0ZXASEwoLZGVzY3JpcHRpb24YASABKAkSEQoJaW1hZ2VfdXJsGAIgASgJIlYKEUluZ3JlZGllbnRTZWN0aW9uEg0KBXRpdGxlGAEgASgJEjIKC2luZ3JlZGllbnRzGAIgAygLMh0uZnJvbnRlbmRhcGkuUmVjaXBlSW5ncmVkaWVudCKLAwoGUmVjaXBlEgoKAmlkGAEgASgJEikKBnNvdXJjZRgCIAEoDjIZLmZyb250ZW5kYXBpLlJlY2lwZVNvdXJjZRIpCgZzdGF0dXMYAyABKA4yGS5mcm9udGVuZGFwaS5SZWNpcGVTdGF0dXMSDQoFdGl0bGUYBCABKAkSEQoJaW1hZ2VfdXJsGAUgASgJEhMKC2Rlc2NyaXB0aW9uGAYgASgJEjIKC2luZ3JlZGllbnRzGAcgAygLMh0uZnJvbnRlbmRhcGkuUmVjaXBlSW5ncmVkaWVudBI+ChZhZGRpdGlvbmFsX2luZ3JlZGllbnRzGAggAygLMh4uZnJvbnRlbmRhcGkuSW5ncmVkaWVudFNlY3Rpb24SJgoFc3RlcHMYCSADKAsyFy5mcm9udGVuZGFwaS5SZWNpcGVTdGVwEg0KBW5vdGVzGAogASgJEhQKDHNlcnZpbmdfc2l6ZRgLIAEoCRInCghsYW5ndWFnZRgMIAEoDjIVLmZyb250ZW5kYXBpLkxhbmd1YWdlIiUKEEdldFJlY2lwZVJlcXVlc3QSEQoJcmVjaXBlX2lkGAEgASgJImMKEUdldFJlY2lwZVJlc3BvbnNlEiMKBnJlY2lwZRgBIAEoCzITLmZyb250ZW5kYXBpLlJlY2lwZRISCgpsbG1fcHJvbXB0GAIgASgJEhUKDWlzX2Jvb2ttYXJrZWQYAyABKAgiOwoKUGFnaW5hdGlvbhIPCgdsYXN0X2lkGAEgASgJEhwKFGxhc3RfdGltZXN0YW1wX25hbm9zGAIgASgDIk4KDVJlY2lwZVNuaXBwZXQSCgoCaWQYASABKAkSDQoFdGl0bGUYAiABKAkSDwoHc3VtbWFyeRgDIAEoCRIRCglpbWFnZV91cmwYBCABKAkiYwoSTGlzdFJlY2lwZXNSZXF1ZXN0Eg0KBXF1ZXJ5GAEgASgJEhEKCWJvb2ttYXJrcxgDIAEoCBIrCgpwYWdpbmF0aW9uGAIgASgLMhcuZnJvbnRlbmRhcGkuUGFnaW5hdGlvbiJvChNMaXN0UmVjaXBlc1Jlc3BvbnNlEisKB3JlY2lwZXMYASADKAsyGi5mcm9udGVuZGFwaS5SZWNpcGVTbmlwcGV0EisKCnBhZ2luYXRpb24YAiABKAsyFy5mcm9udGVuZGFwaS5QYWdpbmF0aW9uIrACChBTdGFydENoYXRSZXF1ZXN0EhUKC3JlY2lwZV90ZXh0GAIgASgJSAASEwoJcmVjaXBlX2lkGAMgASgJSAASEQoHcGxhbl9pZBgGIAEoCUgAEkMKDm1vZGVsX3Byb3ZpZGVyGAQgASgOMisuZnJvbnRlbmRhcGkuU3RhcnRDaGF0UmVxdWVzdC5Nb2RlbFByb3ZpZGVyEhIKCmxsbV9wcm9tcHQYBSABKAkSDQoFbW9kZWwYByABKAkiawoNTW9kZWxQcm92aWRlchIeChpNT0RFTF9QUk9WSURFUl9VTlNQRUNJRklFRBAAEh8KG01PREVMX1BST1ZJREVSX0dPT0dMRV9HRU5BSRABEhkKFU1PREVMX1BST1ZJREVSX09QRU5BSRACQggKBnJlY2lwZSJvChFTdGFydENoYXRSZXNwb25zZRIUCgxjaGF0X2FwaV9rZXkYASABKAkSEgoKY2hhdF9tb2RlbBgCIAEoCRIZChFjaGF0X2luc3RydWN0aW9ucxgDIAEoCRIVCg1zdGFydF9tZXNzYWdlGAQgASgJIoADChBBZGRSZWNpcGVSZXF1ZXN0Eg0KBXRpdGxlGAEgASgJEhsKE21haW5faW1hZ2VfZGF0YV91cmwYAiABKAkSEwoLZGVzY3JpcHRpb24YAyABKAkSMgoLaW5ncmVkaWVudHMYBCADKAsyHS5mcm9udGVuZGFwaS5SZWNpcGVJbmdyZWRpZW50Ej4KFmFkZGl0aW9uYWxfaW5ncmVkaWVudHMYBSADKAsyHi5mcm9udGVuZGFwaS5JbmdyZWRpZW50U2VjdGlvbhI6CgVzdGVwcxgGIAMoCzIrLmZyb250ZW5kYXBpLkFkZFJlY2lwZVJlcXVlc3QuQWRkUmVjaXBlU3RlcBIUCgxzZXJ2aW5nX3NpemUYByABKAkSJwoIbGFuZ3VhZ2UYCCABKA4yFS5mcm9udGVuZGFwaS5MYW5ndWFnZRo8Cg1BZGRSZWNpcGVTdGVwEhMKC2Rlc2NyaXB0aW9uGAEgASgJEhYKDmltYWdlX2RhdGFfdXJsGAIgASgJIiYKEUFkZFJlY2lwZVJlc3BvbnNlEhEKCXJlY2lwZV9pZBgBIAEoCSInChVHZW5lcmF0ZVJlY2lwZVJlcXVlc3QSDgoGcHJvbXB0GAEgASgJIlMKFkdlbmVyYXRlUmVjaXBlUmVzcG9uc2USOQoSYWRkX3JlY2lwZV9yZXF1ZXN0GAEgASgLMh0uZnJvbnRlbmRhcGkuQWRkUmVjaXBlUmVxdWVzdCJ6ChNHZW5lcmF0ZVBsYW5SZXF1ZXN0EhAKCG51bV9kYXlzGAEgASgNEhMKC2luZ3JlZGllbnRzGAIgAygJEigKBmdlbnJlcxgDIAMoDjIYLmZyb250ZW5kYXBpLlJlY2lwZUdlbnJlEhIKCnJlY2lwZV9pZHMYBCADKAkiFgoUR2VuZXJhdGVQbGFuUmVzcG9uc2UiUAoJU3RlcEdyb3VwEg0KBWxhYmVsGAEgASgJEiYKBXN0ZXBzGAIgAygLMhcuZnJvbnRlbmRhcGkuUmVjaXBlU3RlcBIMCgRub3RlGAMgASgJIngKC1BsYW5TbmlwcGV0EgoKAmlkGAEgASgJEjAKBGRhdGUYAiABKAsyGi5nb29nbGUucHJvdG9idWYuVGltZXN0YW1wQga6SAPIAQESKwoHcmVjaXBlcxgDIAMoCzIaLmZyb250ZW5kYXBpLlJlY2lwZVNuaXBwZXQiEQoPR2V0UGxhbnNSZXF1ZXN0IjsKEEdldFBsYW5zUmVzcG9uc2USJwoFcGxhbnMYASADKAsyGC5mcm9udGVuZGFwaS5QbGFuU25pcHBldCLwAQoEUGxhbhIKCgJpZBgBIAEoCRInCgZzdGF0dXMYAiABKA4yFy5mcm9udGVuZGFwaS5QbGFuU3RhdHVzEisKB3JlY2lwZXMYAyADKAsyGi5mcm9udGVuZGFwaS5SZWNpcGVTbmlwcGV0EisKC3N0ZXBfZ3JvdXBzGAQgAygLMhYuZnJvbnRlbmRhcGkuU3RlcEdyb3VwEg0KBW5vdGVzGAUgAygJEjMKC2luZ3JlZGllbnRzGAYgAygLMh4uZnJvbnRlbmRhcGkuSW5ncmVkaWVudFNlY3Rpb24SFQoNc2VydmluZ19zaXplcxgHIAMoCSIhCg5HZXRQbGFuUmVxdWVzdBIPCgdwbGFuX2lkGAEgASgJIk4KD0dldFBsYW5SZXNwb25zZRInCgRwbGFuGAEgASgLMhEuZnJvbnRlbmRhcGkuUGxhbkIGukgDyAEBEhIKCmxsbV9wcm9tcHQYAiABKAkiOAoRVXBkYXRlUGxhblJlcXVlc3QSDwoHcGxhbl9pZBgBIAEoCRISCgpyZWNpcGVfaWRzGAIgAygJIj0KElVwZGF0ZVBsYW5SZXNwb25zZRInCgRwbGFuGAEgASgLMhEuZnJvbnRlbmRhcGkuUGxhbkIGukgDyAEBIicKEkFkZEJvb2ttYXJrUmVxdWVzdBIRCglyZWNpcGVfaWQYASABKAkiFQoTQWRkQm9va21hcmtSZXNwb25zZSIqChVSZW1vdmVCb29rbWFya1JlcXVlc3QSEQoJcmVjaXBlX2lkGAEgASgJIhgKFlJlbW92ZUJvb2ttYXJrUmVzcG9uc2UitAEKC0NoYXRNZXNzYWdlEikKB2NvbnRlbnQYASABKAsyGC5mcm9udGVuZGFwaS5DaGF0Q29udGVudBIrCgRyb2xlGAIgASgOMh0uZnJvbnRlbmRhcGkuQ2hhdE1lc3NhZ2UuUm9sZRIMCgR1cmxzGAMgAygJIj8KBFJvbGUSFAoQUk9MRV9VTlNQRUNJRklFRBAAEg0KCVJPTEVfVVNFUhABEhIKDlJPTEVfQVNTSVNUQU5UEAIiXwoPQ2hhdFBsYW5SZXF1ZXN0Eg8KB2NoYXRfaWQYASABKAkSEAoIbmV3X2NoYXQYAiABKAgSKQoHbWVzc2FnZRgDIAEoCzIYLmZyb250ZW5kYXBpLkNoYXRDb250ZW50ImAKEENoYXRQbGFuUmVzcG9uc2USDwoHY2hhdF9pZBgBIAEoCRIqCghtZXNzYWdlcxgCIAMoCzIYLmZyb250ZW5kYXBpLkNoYXRNZXNzYWdlEg8KB3BsYW5faWQYAyABKAkiGAoWR2V0Q2hhdE1lc3NhZ2VzUmVxdWVzdCJWChdHZXRDaGF0TWVzc2FnZXNSZXNwb25zZRIPCgdjaGF0X2lkGAEgASgJEioKCG1lc3NhZ2VzGAIgAygLMhguZnJvbnRlbmRhcGkuQ2hhdE1lc3NhZ2UqUQoITGFuZ3VhZ2USGAoUTEFOR1VBR0VfVU5TUEVDSUZJRUQQABIUChBMQU5HVUFHRV9FTkdMSVNIEAESFQoRTEFOR1VBR0VfSkFQQU5FU0UQAirGAQoLUmVjaXBlR2VucmUSHAoYUkVDSVBFX0dFTlJFX1VOU1BFQ0lGSUVEEAASGQoVUkVDSVBFX0dFTlJFX0pBUEFORVNFEAESGAoUUkVDSVBFX0dFTlJFX0NISU5FU0UQAhIYChRSRUNJUEVfR0VOUkVfV0VTVEVSThADEhcKE1JFQ0lQRV9HRU5SRV9LT1JFQU4QBBIYChRSRUNJUEVfR0VOUkVfSVRBTElBThAFEhcKE1JFQ0lQRV9HRU5SRV9FVEhOSUMQBiqJAQoMUmVjaXBlU291cmNlEh0KGVJFQ0lQRV9TT1VSQ0VfVU5TUEVDSUZJRUQQABIZChVSRUNJUEVfU09VUkNFX0NPT0tQQUQQARIdChlSRUNJUEVfU09VUkNFX09SQU5HRV9QQUdFEAISIAocUkVDSVBFX1NPVVJDRV9ERUxJU0hfS0lUQ0hFThADKmUKDFJlY2lwZVN0YXR1cxIdChlSRUNJUEVfU1RBVFVTX1VOU1BFQ0lGSUVEEAASHAoYUkVDSVBFX1NUQVRVU19QUk9DRVNTSU5HEAESGAoUUkVDSVBFX1NUQVRVU19BQ1RJVkUQAipdCgpQbGFuU3RhdHVzEhsKF1BMQU5fU1RBVFVTX1VOU1BFQ0lGSUVEEAASGgoWUExBTl9TVEFUVVNfUFJPQ0VTU0lORxABEhYKElBMQU5fU1RBVFVTX0FDVElWRRACMk4KC0NoYXRTZXJ2aWNlEj8KBENoYXQSGC5mcm9udGVuZGFwaS5DaGF0UmVxdWVzdBoZLmZyb250ZW5kYXBpLkNoYXRSZXNwb25zZSgBMAEyqQgKD0Zyb250ZW5kU2VydmljZRJKCglHZXRSZWNpcGUSHS5mcm9udGVuZGFwaS5HZXRSZWNpcGVSZXF1ZXN0Gh4uZnJvbnRlbmRhcGkuR2V0UmVjaXBlUmVzcG9uc2USUAoLTGlzdFJlY2lwZXMSHy5mcm9udGVuZGFwaS5MaXN0UmVjaXBlc1JlcXVlc3QaIC5mcm9udGVuZGFwaS5MaXN0UmVjaXBlc1Jlc3BvbnNlEkoKCVN0YXJ0Q2hhdBIdLmZyb250ZW5kYXBpLlN0YXJ0Q2hhdFJlcXVlc3QaHi5mcm9udGVuZGFwaS5TdGFydENoYXRSZXNwb25zZRJKCglBZGRSZWNpcGUSHS5mcm9udGVuZGFwaS5BZGRSZWNpcGVSZXF1ZXN0Gh4uZnJvbnRlbmRhcGkuQWRkUmVjaXBlUmVzcG9uc2USWQoOR2VuZXJhdGVSZWNpcGUSIi5mcm9udGVuZGFwaS5HZW5lcmF0ZVJlY2lwZVJlcXVlc3QaIy5mcm9udGVuZGFwaS5HZW5lcmF0ZVJlY2lwZVJlc3BvbnNlElMKDEdlbmVyYXRlUGxhbhIgLmZyb250ZW5kYXBpLkdlbmVyYXRlUGxhblJlcXVlc3QaIS5mcm9udGVuZGFwaS5HZW5lcmF0ZVBsYW5SZXNwb25zZRJHCghDaGF0UGxhbhIcLmZyb250ZW5kYXBpLkNoYXRQbGFuUmVxdWVzdBodLmZyb250ZW5kYXBpLkNoYXRQbGFuUmVzcG9uc2USXAoPR2V0Q2hhdE1lc3NhZ2VzEiMuZnJvbnRlbmRhcGkuR2V0Q2hhdE1lc3NhZ2VzUmVxdWVzdBokLmZyb250ZW5kYXBpLkdldENoYXRNZXNzYWdlc1Jlc3BvbnNlEkcKCEdldFBsYW5zEhwuZnJvbnRlbmRhcGkuR2V0UGxhbnNSZXF1ZXN0Gh0uZnJvbnRlbmRhcGkuR2V0UGxhbnNSZXNwb25zZRJECgdHZXRQbGFuEhsuZnJvbnRlbmRhcGkuR2V0UGxhblJlcXVlc3QaHC5mcm9udGVuZGFwaS5HZXRQbGFuUmVzcG9uc2USTQoKVXBkYXRlUGxhbhIeLmZyb250ZW5kYXBpLlVwZGF0ZVBsYW5SZXF1ZXN0Gh8uZnJvbnRlbmRhcGkuVXBkYXRlUGxhblJlc3BvbnNlElAKC0FkZEJvb2ttYXJrEh8uZnJvbnRlbmRhcGkuQWRkQm9va21hcmtSZXF1ZXN0GiAuZnJvbnRlbmRhcGkuQWRkQm9va21hcmtSZXNwb25zZRJZCg5SZW1vdmVCb29rbWFyaxIiLmZyb250ZW5kYXBpLlJlbW92ZUJvb2ttYXJrUmVxdWVzdBojLmZyb250ZW5kYXBpLlJlbW92ZUJvb2ttYXJrUmVzcG9uc2VCPVo7Z2l0aHViLmNvbS9jdXJpb3N3aXRjaC9jb29rY2hhdC9mcm9udGVuZC9hcGkvZ287ZnJvbnRlbmRhcGliBnByb3RvMw", [file_buf_validate_validate, file_google_protobuf_timestamp]);
+
+/**
+ * @generated from message frontendapi.Image
+ */
+export type Image = Message<"frontendapi.Image"> & {
+  /**
+   * The raw image data.
+   *
+   * @generated from field: bytes data = 1;
+   */
+  data: Uint8Array;
+
+  /**
+   * The MIME type of the image, e.g. "image/png".
+   *
+   * @generated from field: string mime_type = 2;
+   */
+  mimeType: string;
+};
+
+export type ImageValid = Image;
+
+/**
+ * Describes the message frontendapi.Image.
+ * Use `create(ImageSchema)` to create a new message.
+ */
+export const ImageSchema: GenMessage<Image, {validType: ImageValid}> = /*@__PURE__*/
+  messageDesc(file_frontendapi_frontend, 0);
 
 /**
  * The content of a chat message.
@@ -40,6 +68,14 @@ export type ChatContent = Message<"frontendapi.ChatContent"> & {
      */
     value: Uint8Array;
     case: "audio";
+  } | {
+    /**
+     * An image message.
+     *
+     * @generated from field: frontendapi.Image image = 3;
+     */
+    value: Image;
+    case: "image";
   } | { case: undefined; value?: undefined };
 };
 
@@ -50,7 +86,7 @@ export type ChatContentValid = ChatContent;
  * Use `create(ChatContentSchema)` to create a new message.
  */
 export const ChatContentSchema: GenMessage<ChatContent, {validType: ChatContentValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 0);
+  messageDesc(file_frontendapi_frontend, 1);
 
 /**
  * A request to send in a chat.
@@ -96,7 +132,7 @@ export type ChatRequestValid = ChatRequest;
  * Use `create(ChatRequestSchema)` to create a new message.
  */
 export const ChatRequestSchema: GenMessage<ChatRequest, {validType: ChatRequestValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 1);
+  messageDesc(file_frontendapi_frontend, 2);
 
 /**
  * A response in a chat.
@@ -119,7 +155,7 @@ export type ChatResponseValid = ChatResponse;
  * Use `create(ChatResponseSchema)` to create a new message.
  */
 export const ChatResponseSchema: GenMessage<ChatResponse, {validType: ChatResponseValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 2);
+  messageDesc(file_frontendapi_frontend, 3);
 
 /**
  * An ingredient in a recipe.
@@ -149,7 +185,7 @@ export type RecipeIngredientValid = RecipeIngredient;
  * Use `create(RecipeIngredientSchema)` to create a new message.
  */
 export const RecipeIngredientSchema: GenMessage<RecipeIngredient, {validType: RecipeIngredientValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 3);
+  messageDesc(file_frontendapi_frontend, 4);
 
 /**
  * A step in a recipe.
@@ -179,7 +215,7 @@ export type RecipeStepValid = RecipeStep;
  * Use `create(RecipeStepSchema)` to create a new message.
  */
 export const RecipeStepSchema: GenMessage<RecipeStep, {validType: RecipeStepValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 4);
+  messageDesc(file_frontendapi_frontend, 5);
 
 /**
  * A section of ingredients in a recipe.
@@ -209,7 +245,7 @@ export type IngredientSectionValid = IngredientSection;
  * Use `create(IngredientSectionSchema)` to create a new message.
  */
 export const IngredientSectionSchema: GenMessage<IngredientSection, {validType: IngredientSectionValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 5);
+  messageDesc(file_frontendapi_frontend, 6);
 
 /**
  * Full details of a recipe.
@@ -309,7 +345,7 @@ export type RecipeValid = Recipe;
  * Use `create(RecipeSchema)` to create a new message.
  */
 export const RecipeSchema: GenMessage<Recipe, {validType: RecipeValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 6);
+  messageDesc(file_frontendapi_frontend, 7);
 
 /**
  * A request for FrontendService.GetRecipe.
@@ -332,7 +368,7 @@ export type GetRecipeRequestValid = GetRecipeRequest;
  * Use `create(GetRecipeRequestSchema)` to create a new message.
  */
 export const GetRecipeRequestSchema: GenMessage<GetRecipeRequest, {validType: GetRecipeRequestValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 7);
+  messageDesc(file_frontendapi_frontend, 8);
 
 /**
  * A response for FrontendService.GetRecipe.
@@ -370,7 +406,7 @@ export type GetRecipeResponseValid = GetRecipeResponse;
  * Use `create(GetRecipeResponseSchema)` to create a new message.
  */
 export const GetRecipeResponseSchema: GenMessage<GetRecipeResponse, {validType: GetRecipeResponseValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 8);
+  messageDesc(file_frontendapi_frontend, 9);
 
 /**
  * A token returned to retrieve a subsequent page of items.
@@ -396,7 +432,7 @@ export type PaginationValid = Pagination;
  * Use `create(PaginationSchema)` to create a new message.
  */
 export const PaginationSchema: GenMessage<Pagination, {validType: PaginationValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 9);
+  messageDesc(file_frontendapi_frontend, 10);
 
 /**
  * A snippet of a recipe for list views.
@@ -440,7 +476,7 @@ export type RecipeSnippetValid = RecipeSnippet;
  * Use `create(RecipeSnippetSchema)` to create a new message.
  */
 export const RecipeSnippetSchema: GenMessage<RecipeSnippet, {validType: RecipeSnippetValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 10);
+  messageDesc(file_frontendapi_frontend, 11);
 
 /**
  * A request for FrontendService.ListRecipes.
@@ -478,7 +514,7 @@ export type ListRecipesRequestValid = ListRecipesRequest;
  * Use `create(ListRecipesRequestSchema)` to create a new message.
  */
 export const ListRecipesRequestSchema: GenMessage<ListRecipesRequest, {validType: ListRecipesRequestValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 11);
+  messageDesc(file_frontendapi_frontend, 12);
 
 /**
  * A response for FrontendService.ListRecipes.
@@ -508,7 +544,7 @@ export type ListRecipesResponseValid = ListRecipesResponse;
  * Use `create(ListRecipesResponseSchema)` to create a new message.
  */
 export const ListRecipesResponseSchema: GenMessage<ListRecipesResponse, {validType: ListRecipesResponseValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 12);
+  messageDesc(file_frontendapi_frontend, 13);
 
 /**
  * A request to start a chat session.
@@ -577,7 +613,7 @@ export type StartChatRequestValid = StartChatRequest;
  * Use `create(StartChatRequestSchema)` to create a new message.
  */
 export const StartChatRequestSchema: GenMessage<StartChatRequest, {validType: StartChatRequestValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 13);
+  messageDesc(file_frontendapi_frontend, 14);
 
 /**
  * @generated from enum frontendapi.StartChatRequest.ModelProvider
@@ -609,7 +645,7 @@ export enum StartChatRequest_ModelProvider {
  * Describes the enum frontendapi.StartChatRequest.ModelProvider.
  */
 export const StartChatRequest_ModelProviderSchema: GenEnum<StartChatRequest_ModelProvider> = /*@__PURE__*/
-  enumDesc(file_frontendapi_frontend, 13, 0);
+  enumDesc(file_frontendapi_frontend, 14, 0);
 
 /**
  * A response to start a chat session.
@@ -653,7 +689,7 @@ export type StartChatResponseValid = StartChatResponse;
  * Use `create(StartChatResponseSchema)` to create a new message.
  */
 export const StartChatResponseSchema: GenMessage<StartChatResponse, {validType: StartChatResponseValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 14);
+  messageDesc(file_frontendapi_frontend, 15);
 
 /**
  * @generated from message frontendapi.AddRecipeRequest
@@ -723,7 +759,7 @@ export type AddRecipeRequestValid = AddRecipeRequest;
  * Use `create(AddRecipeRequestSchema)` to create a new message.
  */
 export const AddRecipeRequestSchema: GenMessage<AddRecipeRequest, {validType: AddRecipeRequestValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 15);
+  messageDesc(file_frontendapi_frontend, 16);
 
 /**
  * @generated from message frontendapi.AddRecipeRequest.AddRecipeStep
@@ -751,7 +787,7 @@ export type AddRecipeRequest_AddRecipeStepValid = AddRecipeRequest_AddRecipeStep
  * Use `create(AddRecipeRequest_AddRecipeStepSchema)` to create a new message.
  */
 export const AddRecipeRequest_AddRecipeStepSchema: GenMessage<AddRecipeRequest_AddRecipeStep, {validType: AddRecipeRequest_AddRecipeStepValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 15, 0);
+  messageDesc(file_frontendapi_frontend, 16, 0);
 
 /**
  * @generated from message frontendapi.AddRecipeResponse
@@ -772,7 +808,7 @@ export type AddRecipeResponseValid = AddRecipeResponse;
  * Use `create(AddRecipeResponseSchema)` to create a new message.
  */
 export const AddRecipeResponseSchema: GenMessage<AddRecipeResponse, {validType: AddRecipeResponseValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 16);
+  messageDesc(file_frontendapi_frontend, 17);
 
 /**
  * A request for FrontendService.GenerateRecipe.
@@ -795,7 +831,7 @@ export type GenerateRecipeRequestValid = GenerateRecipeRequest;
  * Use `create(GenerateRecipeRequestSchema)` to create a new message.
  */
 export const GenerateRecipeRequestSchema: GenMessage<GenerateRecipeRequest, {validType: GenerateRecipeRequestValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 17);
+  messageDesc(file_frontendapi_frontend, 18);
 
 /**
  * A response for FrontendService.GenerateRecipe.
@@ -818,7 +854,7 @@ export type GenerateRecipeResponseValid = GenerateRecipeResponse;
  * Use `create(GenerateRecipeResponseSchema)` to create a new message.
  */
 export const GenerateRecipeResponseSchema: GenMessage<GenerateRecipeResponse, {validType: GenerateRecipeResponseValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 18);
+  messageDesc(file_frontendapi_frontend, 19);
 
 /**
  * A request for FrontendService.GeneratePlan.
@@ -862,7 +898,7 @@ export type GeneratePlanRequestValid = GeneratePlanRequest;
  * Use `create(GeneratePlanRequestSchema)` to create a new message.
  */
 export const GeneratePlanRequestSchema: GenMessage<GeneratePlanRequest, {validType: GeneratePlanRequestValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 19);
+  messageDesc(file_frontendapi_frontend, 20);
 
 /**
  * A response for FrontendService.GeneratePlan.
@@ -879,7 +915,7 @@ export type GeneratePlanResponseValid = GeneratePlanResponse;
  * Use `create(GeneratePlanResponseSchema)` to create a new message.
  */
 export const GeneratePlanResponseSchema: GenMessage<GeneratePlanResponse, {validType: GeneratePlanResponseValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 20);
+  messageDesc(file_frontendapi_frontend, 21);
 
 /**
  * A group of steps within a plan that can be executed together.
@@ -916,7 +952,7 @@ export type StepGroupValid = StepGroup;
  * Use `create(StepGroupSchema)` to create a new message.
  */
 export const StepGroupSchema: GenMessage<StepGroup, {validType: StepGroupValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 21);
+  messageDesc(file_frontendapi_frontend, 22);
 
 /**
  * A snippet of a plan, without executiond details.
@@ -979,7 +1015,7 @@ export type PlanSnippetValid = Message<"frontendapi.PlanSnippet"> & {
  * Use `create(PlanSnippetSchema)` to create a new message.
  */
 export const PlanSnippetSchema: GenMessage<PlanSnippet, {validType: PlanSnippetValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 22);
+  messageDesc(file_frontendapi_frontend, 23);
 
 /**
  * @generated from message frontendapi.GetPlansRequest
@@ -994,7 +1030,7 @@ export type GetPlansRequestValid = GetPlansRequest;
  * Use `create(GetPlansRequestSchema)` to create a new message.
  */
 export const GetPlansRequestSchema: GenMessage<GetPlansRequest, {validType: GetPlansRequestValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 23);
+  messageDesc(file_frontendapi_frontend, 24);
 
 /**
  * @generated from message frontendapi.GetPlansResponse
@@ -1025,7 +1061,7 @@ export type GetPlansResponseValid = Message<"frontendapi.GetPlansResponse"> & {
  * Use `create(GetPlansResponseSchema)` to create a new message.
  */
 export const GetPlansResponseSchema: GenMessage<GetPlansResponse, {validType: GetPlansResponseValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 24);
+  messageDesc(file_frontendapi_frontend, 25);
 
 /**
  * A cooking plan.
@@ -1086,7 +1122,7 @@ export type PlanValid = Plan;
  * Use `create(PlanSchema)` to create a new message.
  */
 export const PlanSchema: GenMessage<Plan, {validType: PlanValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 25);
+  messageDesc(file_frontendapi_frontend, 26);
 
 /**
  * A request for FrontendService.GetPlan.
@@ -1109,7 +1145,7 @@ export type GetPlanRequestValid = GetPlanRequest;
  * Use `create(GetPlanRequestSchema)` to create a new message.
  */
 export const GetPlanRequestSchema: GenMessage<GetPlanRequest, {validType: GetPlanRequestValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 26);
+  messageDesc(file_frontendapi_frontend, 27);
 
 /**
  * A response for FrontendService.GetPlan.
@@ -1156,7 +1192,7 @@ export type GetPlanResponseValid = Message<"frontendapi.GetPlanResponse"> & {
  * Use `create(GetPlanResponseSchema)` to create a new message.
  */
 export const GetPlanResponseSchema: GenMessage<GetPlanResponse, {validType: GetPlanResponseValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 27);
+  messageDesc(file_frontendapi_frontend, 28);
 
 /**
  * A request for FrontendService.UpdatePlan.
@@ -1186,7 +1222,7 @@ export type UpdatePlanRequestValid = UpdatePlanRequest;
  * Use `create(UpdatePlanRequestSchema)` to create a new message.
  */
 export const UpdatePlanRequestSchema: GenMessage<UpdatePlanRequest, {validType: UpdatePlanRequestValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 28);
+  messageDesc(file_frontendapi_frontend, 29);
 
 /**
  * @generated from message frontendapi.UpdatePlanResponse
@@ -1213,7 +1249,7 @@ export type UpdatePlanResponseValid = Message<"frontendapi.UpdatePlanResponse"> 
  * Use `create(UpdatePlanResponseSchema)` to create a new message.
  */
 export const UpdatePlanResponseSchema: GenMessage<UpdatePlanResponse, {validType: UpdatePlanResponseValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 29);
+  messageDesc(file_frontendapi_frontend, 30);
 
 /**
  * A request for FrontendService.AddBookmark.
@@ -1236,7 +1272,7 @@ export type AddBookmarkRequestValid = AddBookmarkRequest;
  * Use `create(AddBookmarkRequestSchema)` to create a new message.
  */
 export const AddBookmarkRequestSchema: GenMessage<AddBookmarkRequest, {validType: AddBookmarkRequestValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 30);
+  messageDesc(file_frontendapi_frontend, 31);
 
 /**
  * A response for FrontendService.AddBookmark.
@@ -1253,7 +1289,7 @@ export type AddBookmarkResponseValid = AddBookmarkResponse;
  * Use `create(AddBookmarkResponseSchema)` to create a new message.
  */
 export const AddBookmarkResponseSchema: GenMessage<AddBookmarkResponse, {validType: AddBookmarkResponseValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 31);
+  messageDesc(file_frontendapi_frontend, 32);
 
 /**
  * A request for FrontendService.RemoveBookmark.
@@ -1276,7 +1312,7 @@ export type RemoveBookmarkRequestValid = RemoveBookmarkRequest;
  * Use `create(RemoveBookmarkRequestSchema)` to create a new message.
  */
 export const RemoveBookmarkRequestSchema: GenMessage<RemoveBookmarkRequest, {validType: RemoveBookmarkRequestValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 32);
+  messageDesc(file_frontendapi_frontend, 33);
 
 /**
  * A response for FrontendService.RemoveBookmark.
@@ -1293,18 +1329,18 @@ export type RemoveBookmarkResponseValid = RemoveBookmarkResponse;
  * Use `create(RemoveBookmarkResponseSchema)` to create a new message.
  */
 export const RemoveBookmarkResponseSchema: GenMessage<RemoveBookmarkResponse, {validType: RemoveBookmarkResponseValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 33);
+  messageDesc(file_frontendapi_frontend, 34);
 
 /**
  * @generated from message frontendapi.ChatMessage
  */
 export type ChatMessage = Message<"frontendapi.ChatMessage"> & {
   /**
-   * Text content of the message.
+   * The content of the message.
    *
-   * @generated from field: string content = 1;
+   * @generated from field: frontendapi.ChatContent content = 1;
    */
-  content: string;
+  content?: ChatContent;
 
   /**
    * The role of the message.
@@ -1328,7 +1364,7 @@ export type ChatMessageValid = ChatMessage;
  * Use `create(ChatMessageSchema)` to create a new message.
  */
 export const ChatMessageSchema: GenMessage<ChatMessage, {validType: ChatMessageValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 34);
+  messageDesc(file_frontendapi_frontend, 35);
 
 /**
  * @generated from enum frontendapi.ChatMessage.Role
@@ -1354,7 +1390,7 @@ export enum ChatMessage_Role {
  * Describes the enum frontendapi.ChatMessage.Role.
  */
 export const ChatMessage_RoleSchema: GenEnum<ChatMessage_Role> = /*@__PURE__*/
-  enumDesc(file_frontendapi_frontend, 34, 0);
+  enumDesc(file_frontendapi_frontend, 35, 0);
 
 /**
  * A request for FrontendService.ChatPlan.
@@ -1380,9 +1416,9 @@ export type ChatPlanRequest = Message<"frontendapi.ChatPlanRequest"> & {
   /**
    * The message from the user.
    *
-   * @generated from field: string message = 3;
+   * @generated from field: frontendapi.ChatContent message = 3;
    */
-  message: string;
+  message?: ChatContent;
 };
 
 export type ChatPlanRequestValid = ChatPlanRequest;
@@ -1392,7 +1428,7 @@ export type ChatPlanRequestValid = ChatPlanRequest;
  * Use `create(ChatPlanRequestSchema)` to create a new message.
  */
 export const ChatPlanRequestSchema: GenMessage<ChatPlanRequest, {validType: ChatPlanRequestValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 35);
+  messageDesc(file_frontendapi_frontend, 36);
 
 /**
  * A response for FrontendService.ChatPlan.
@@ -1429,7 +1465,7 @@ export type ChatPlanResponseValid = ChatPlanResponse;
  * Use `create(ChatPlanResponseSchema)` to create a new message.
  */
 export const ChatPlanResponseSchema: GenMessage<ChatPlanResponse, {validType: ChatPlanResponseValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 36);
+  messageDesc(file_frontendapi_frontend, 37);
 
 /**
  * A request for FrontendService.GetChatMessages.
@@ -1446,7 +1482,7 @@ export type GetChatMessagesRequestValid = GetChatMessagesRequest;
  * Use `create(GetChatMessagesRequestSchema)` to create a new message.
  */
 export const GetChatMessagesRequestSchema: GenMessage<GetChatMessagesRequest, {validType: GetChatMessagesRequestValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 37);
+  messageDesc(file_frontendapi_frontend, 38);
 
 /**
  * A response for FrontendService.GetChatMessages.
@@ -1476,7 +1512,7 @@ export type GetChatMessagesResponseValid = GetChatMessagesResponse;
  * Use `create(GetChatMessagesResponseSchema)` to create a new message.
  */
 export const GetChatMessagesResponseSchema: GenMessage<GetChatMessagesResponse, {validType: GetChatMessagesResponseValid}> = /*@__PURE__*/
-  messageDesc(file_frontendapi_frontend, 38);
+  messageDesc(file_frontendapi_frontend, 39);
 
 /**
  * @generated from enum frontendapi.Language

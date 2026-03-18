@@ -7,6 +7,14 @@ import "google/protobuf/timestamp.proto";
 
 option go_package = "github.com/curioswitch/cookchat/frontend/api/go;frontendapi";
 
+message Image {
+  // The raw image data.
+  bytes data = 1;
+
+  // The MIME type of the image, e.g. "image/png".
+  string mime_type = 2;
+}
+
 // The content of a chat message.
 message ChatContent {
   oneof payload {
@@ -15,6 +23,9 @@ message ChatContent {
 
     // An audio message.
     bytes audio = 2;
+
+    // An image message.
+    Image image = 3;
   }
 }
 
@@ -441,8 +452,8 @@ message RemoveBookmarkRequest {
 message RemoveBookmarkResponse {}
 
 message ChatMessage {
-  // Text content of the message.
-  string content = 1;
+  // The content of the message.
+  ChatContent content = 1;
 
   enum Role {
     ROLE_UNSPECIFIED = 0;
@@ -467,7 +478,7 @@ message ChatPlanRequest {
   bool new_chat = 2;
 
   // The message from the user.
-  string message = 3;
+  ChatContent message = 3;
 }
 
 // A response for FrontendService.ChatPlan.
